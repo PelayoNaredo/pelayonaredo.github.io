@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos - Pelayo Naredo</title>
+    <meta
+      name="description"
+      content="Portfolio de proyectos de desarrollo web de Pelayo Naredo. Aplicaciones modernas, responsive y accesibles."
+    />
+    <meta
+      name="keywords"
+      content="proyectos web, desarrollo web, portfolio, HTML, CSS, JavaScript, Angular, PHP"
+    />
+    <meta name="author" content="Pelayo Naredo" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://pelayonaredo.github.io/projects.html"
+    />
+    <meta property="og:title" content="Proyectos - Pelayo Naredo" />
+    <meta
+      property="og:description"
+      content="Portfolio de proyectos de desarrollo web de Pelayo Naredo"
+    />
+    <meta property="og:image" content="./images/proy-et.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <span class="logo-text">Pelayo</span>
+            <span class="logo-accent">Naredo</span>
+          </a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="index.html#about" class="nav-link">Sobre mí</a>
+          <a href="index.html#skills" class="nav-link">Habilidades</a>
+          <a href="projects.html" class="nav-link active">Proyectos</a>
+          <a href="photography.html" class="nav-link">Fotografía</a>
+          <a href="index.html#experience" class="nav-link">Experiencia</a>
+          <a href="index.html#contact" class="nav-link">Contacto</a>
+        </div>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header-content" data-aos="fade-up">
+          <nav aria-label="breadcrumb" class="breadcrumb">
+            <a href="index.html" class="breadcrumb-link">Inicio</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Proyectos</span>
+          </nav>
+          <h1 class="page-title">Mis Proyectos</h1>
+          <p class="page-subtitle">
+            Una selección de mis trabajos más destacados en desarrollo web,
+            donde combino diseño moderno con funcionalidad avanzada.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-controls" data-aos="fade-up" data-aos-delay="200">
+          <button
+            class="filter-btn active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            <i class="fas fa-th" aria-hidden="true"></i>
+            Todos
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="frontend"
+            aria-pressed="false"
+          >
+            <i class="fab fa-html5" aria-hidden="true"></i>
+            Frontend
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="fullstack"
+            aria-pressed="false"
+          >
+            <i class="fas fa-server" aria-hidden="true"></i>
+            Full Stack
+          </button>
+          <button class="filter-btn" data-filter="angular" aria-pressed="false">
+            <i class="fab fa-angular" aria-hidden="true"></i>
+            Angular
+          </button>
+          <button class="filter-btn" data-filter="php" aria-pressed="false">
+            <i class="fab fa-php" aria-hidden="true"></i>
+            PHP
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <main class="projects-main">
+      <div class="container">
+        <div class="projects-grid" id="projects-grid">
+          <!-- Proyecto 1: EventosTech -->
+          <article
+            class="project-card"
+            data-category="fullstack angular"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="project-image">
+              <img
+                src="./images/proy-et.png"
+                alt="EventosTech - Plataforma de gestión de eventos"
+                loading="lazy"
+              />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button
+                    class="btn-icon project-view-btn"
+                    data-project="eventosTech"
+                    aria-label="Ver detalles del proyecto EventosTech"
+                  >
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver demo en vivo"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">EventosTech</h3>
+                <div class="project-tags">
+                  <span class="project-tag tag-angular">Angular</span>
+                  <span class="project-tag tag-php">PHP</span>
+                  <span class="project-tag tag-mysql">MySQL</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Plataforma integral para la gestión de eventos tecnológicos.
+                Incluye sistema de registro, panel de administración, gestión de
+                ponentes y seguimiento de asistencia en tiempo real.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  <span>Gestión de eventos</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                  <span>Registro de asistentes</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                  <span>Análisis y reportes</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: TuristApp -->
+          <article
+            class="project-card"
+            data-category="frontend"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="project-image">
+              <img
+                src="./images/proy-turist.png"
+                alt="TuristApp - Aplicación de turismo"
+                loading="lazy"
+              />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button
+                    class="btn-icon project-view-btn"
+                    data-project="turistApp"
+                    aria-label="Ver detalles del proyecto TuristApp"
+                  >
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver demo en vivo"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">TuristApp</h3>
+                <div class="project-tags">
+                  <span class="project-tag tag-html">HTML5</span>
+                  <span class="project-tag tag-css">CSS3</span>
+                  <span class="project-tag tag-js">JavaScript</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Aplicación web responsive para la promoción turística. Diseño
+                moderno y adaptativo con galería interactiva, mapas integrados y
+                sistema de reservas.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">
+                  <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                  <span>Mapas interactivos</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-images" aria-hidden="true"></i>
+                  <span>Galería responsive</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                  <span>Mobile-first design</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: WorkShifts -->
+          <article
+            class="project-card"
+            data-category="fullstack php"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="project-image">
+              <img
+                src="./images/galerias/proy-shifts.png"
+                alt="WorkShifts - Sistema de gestión de turnos"
+                loading="lazy"
+              />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button
+                    class="btn-icon project-view-btn"
+                    data-project="workShifts"
+                    aria-label="Ver detalles del proyecto WorkShifts"
+                  >
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver demo en vivo"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">WorkShifts</h3>
+                <div class="project-tags">
+                  <span class="project-tag tag-php">PHP</span>
+                  <span class="project-tag tag-mysql">MySQL</span>
+                  <span class="project-tag tag-bootstrap">Bootstrap</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Sistema completo para la gestión de turnos laborales. Incluye
+                calendario interactivo, gestión de empleados, reportes
+                automáticos y notificaciones por email.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <span>Gestión de horarios</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-bell" aria-hidden="true"></i>
+                  <span>Notificaciones</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-file-alt" aria-hidden="true"></i>
+                  <span>Reportes automáticos</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 4: PlaysBeach -->
+          <article
+            class="project-card"
+            data-category="frontend"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="project-image">
+              <img
+                src="./images/galerias/proy-playas.png"
+                alt="PlaysBeach - Portal de playas"
+                loading="lazy"
+              />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button
+                    class="btn-icon project-view-btn"
+                    data-project="playsBeach"
+                    aria-label="Ver detalles del proyecto PlaysBeach"
+                  >
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver código fuente en GitHub"
+                  >
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn-icon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ver demo en vivo"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">PlaysBeach</h3>
+                <div class="project-tags">
+                  <span class="project-tag tag-html">HTML5</span>
+                  <span class="project-tag tag-sass">SASS</span>
+                  <span class="project-tag tag-js">JavaScript</span>
+                </div>
+              </div>
+              <p class="project-description">
+                Portal web dedicado a la promoción de playas costeras. Diseño
+                elegante con efectos paralax, galería de imágenes optimizada y
+                sistema de filtros avanzado.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <span>Búsqueda avanzada</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-star" aria-hidden="true"></i>
+                  <span>Sistema de ratings</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-share-alt" aria-hidden="true"></i>
+                  <span>Compartir social</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-section" data-aos="fade-up" data-aos-delay="500">
+          <button class="btn btn-outline load-more-btn" id="load-more-btn">
+            <i class="fas fa-plus" aria-hidden="true"></i>
+            Cargar más proyectos
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div
+      class="modal fade"
+      id="projectModal"
+      tabindex="-1"
+      aria-labelledby="projectModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="projectModalLabel">
+              Detalles del Proyecto
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar modal"
+            >
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="project-details-content">
+              <!-- Content will be loaded dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Volver arriba">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p>&copy; 2025 Pelayo Naredo. Todos los derechos reservados.</p>
+          </div>
+          <div class="footer-links">
+            <a href="index.html#contact" class="footer-link">Contacto</a>
+            <a href="index.html" class="footer-link">Inicio</a>
+            <a href="photography.html" class="footer-link">Fotografía</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

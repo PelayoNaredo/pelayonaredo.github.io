@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotografía - Pelayo Naredo</title>
+    <meta
+      name="description"
+      content="Portfolio fotográfico de Pelayo Naredo. Fotografía de paisajes, retratos y eventos con enfoque artístico y profesional."
+    />
+    <meta
+      name="keywords"
+      content="fotografía, portfolio fotográfico, paisajes, retratos, eventos, fotografía profesional"
+    />
+    <meta name="author" content="Pelayo Naredo" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://pelayonaredo.github.io/photography.html"
+    />
+    <meta property="og:title" content="Fotografía - Pelayo Naredo" />
+    <meta
+      property="og:description"
+      content="Portfolio fotográfico de Pelayo Naredo"
+    />
+    <meta property="og:image" content="./images/fotografía/lagos01.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Lightbox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <span class="logo-text">Pelayo</span>
+            <span class="logo-accent">Naredo</span>
+          </a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="index.html#about" class="nav-link">Sobre mí</a>
+          <a href="index.html#skills" class="nav-link">Habilidades</a>
+          <a href="projects.html" class="nav-link">Proyectos</a>
+          <a href="photography.html" class="nav-link active">Fotografía</a>
+          <a href="index.html#experience" class="nav-link">Experiencia</a>
+          <a href="index.html#contact" class="nav-link">Contacto</a>
+        </div>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header photography-header">
+      <div class="container">
+        <div class="page-header-content" data-aos="fade-up">
+          <nav aria-label="breadcrumb" class="breadcrumb">
+            <a href="index.html" class="breadcrumb-link">Inicio</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Fotografía</span>
+          </nav>
+          <h1 class="page-title">Mi Fotografía</h1>
+          <p class="page-subtitle">
+            Capturando momentos únicos a través del lente. Una colección de mis
+            trabajos fotográficos que van desde paisajes naturales hasta
+            retratos íntimos.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-controls" data-aos="fade-up" data-aos-delay="200">
+          <button
+            class="filter-btn active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            <i class="fas fa-th" aria-hidden="true"></i>
+            Todas
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="landscapes"
+            aria-pressed="false"
+          >
+            <i class="fas fa-mountain" aria-hidden="true"></i>
+            Paisajes
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="portraits"
+            aria-pressed="false"
+          >
+            <i class="fas fa-user" aria-hidden="true"></i>
+            Retratos
+          </button>
+          <button class="filter-btn" data-filter="events" aria-pressed="false">
+            <i class="fas fa-calendar-day" aria-hidden="true"></i>
+            Eventos
+          </button>
+          <button class="filter-btn" data-filter="nature" aria-pressed="false">
+            <i class="fas fa-leaf" aria-hidden="true"></i>
+            Naturaleza
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photography Gallery -->
+    <main class="photography-main">
+      <div class="container">
+        <div class="photography-grid" id="photography-grid">
+          <!-- Lagos -->
+          <article
+            class="photo-item"
+            data-category="landscapes nature"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/lagos01.jpg"
+                alt="Lagos cristalinos en paisaje montañoso"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Lagos Cristalinos</h3>
+                  <p class="photo-category">Paisajes • Naturaleza</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/lagos01.jpg"
+                    data-lightbox="gallery"
+                    data-title="Lagos Cristalinos - Capturando la serenidad de las aguas montañosas"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="lagos01"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Estrellas -->
+          <article
+            class="photo-item"
+            data-category="landscapes nature"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/estrellas01.jpg"
+                alt="Cielo estrellado nocturno"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Cielo Estrellado</h3>
+                  <p class="photo-category">Paisajes • Nocturna</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/estrellas01.jpg"
+                    data-lightbox="gallery"
+                    data-title="Cielo Estrellado - La magia de la fotografía nocturna"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="estrellas01"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Retrato DB1 -->
+          <article
+            class="photo-item"
+            data-category="portraits"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/db1.jpg"
+                alt="Retrato artístico en blanco y negro"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Retrato Artístico</h3>
+                  <p class="photo-category">Retratos • B&N</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/db1.jpg"
+                    data-lightbox="gallery"
+                    data-title="Retrato Artístico - Expresión y emoción en blanco y negro"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="db1"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Retrato DB2 -->
+          <article
+            class="photo-item"
+            data-category="portraits"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/db2.jpg"
+                alt="Retrato profesional"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Retrato Profesional</h3>
+                  <p class="photo-category">Retratos • Estudio</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/db2.jpg"
+                    data-lightbox="gallery"
+                    data-title="Retrato Profesional - Iluminación y composición estudiada"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="db2"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Retrato DB3 -->
+          <article
+            class="photo-item"
+            data-category="portraits"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/db3.jpg"
+                alt="Retrato con luz natural"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Luz Natural</h3>
+                  <p class="photo-category">Retratos • Exterior</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/db3.jpg"
+                    data-lightbox="gallery"
+                    data-title="Luz Natural - Aprovechando la iluminación dorada"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="db3"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hotel HH1 -->
+          <article
+            class="photo-item"
+            data-category="events"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/hh1.jpg"
+                alt="Fotografía de evento en hotel"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Evento Corporativo</h3>
+                  <p class="photo-category">Eventos • Hotel</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/hh1.jpg"
+                    data-lightbox="gallery"
+                    data-title="Evento Corporativo - Capturando momentos profesionales"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="hh1"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hotel HH2 -->
+          <article
+            class="photo-item"
+            data-category="events"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/hh2.jpg"
+                alt="Detalle de evento gastronómico"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Gastronomía</h3>
+                  <p class="photo-category">Eventos • Culinario</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/hh2.jpg"
+                    data-lightbox="gallery"
+                    data-title="Gastronomía - Arte culinario en cada detalle"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="hh2"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Hotel HH3 -->
+          <article
+            class="photo-item"
+            data-category="events"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/hh3.jpg"
+                alt="Ambiente de evento nocturno"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Ambiente Nocturno</h3>
+                  <p class="photo-category">Eventos • Noche</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/hh3.jpg"
+                    data-lightbox="gallery"
+                    data-title="Ambiente Nocturno - La elegancia de la noche"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="hh3"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ONNE 1 -->
+          <article
+            class="photo-item"
+            data-category="portraits events"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/onne1.jpg"
+                alt="Sesión de fotos profesional"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Sesión Profesional</h3>
+                  <p class="photo-category">Retratos • Moda</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/onne1.jpg"
+                    data-lightbox="gallery"
+                    data-title="Sesión Profesional - Estilo y personalidad"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="onne1"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ONNE 2 -->
+          <article
+            class="photo-item"
+            data-category="portraits"
+            data-aos="fade-up"
+            data-aos-delay="550"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/onne2.jpg"
+                alt="Retrato urbano"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Retrato Urbano</h3>
+                  <p class="photo-category">Retratos • Urbano</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/onne2.jpg"
+                    data-lightbox="gallery"
+                    data-title="Retrato Urbano - Conexión con el entorno"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="onne2"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ONNE 3 -->
+          <article
+            class="photo-item"
+            data-category="portraits"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="photo-container">
+              <img
+                src="./images/fotografía/onne3.jpg"
+                alt="Expresión artística"
+                loading="lazy"
+              />
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h3 class="photo-title">Expresión Artística</h3>
+                  <p class="photo-category">Retratos • Arte</p>
+                </div>
+                <div class="photo-actions">
+                  <a
+                    href="./images/fotografía/onne3.jpg"
+                    data-lightbox="gallery"
+                    data-title="Expresión Artística - Emociones capturadas"
+                    class="photo-action-btn"
+                    aria-label="Ver imagen en tamaño completo"
+                  >
+                    <i class="fas fa-expand" aria-hidden="true"></i>
+                  </a>
+                  <button
+                    class="photo-action-btn photo-info-btn"
+                    data-photo="onne3"
+                    aria-label="Ver información de la foto"
+                  >
+                    <i class="fas fa-info" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more-section" data-aos="fade-up" data-aos-delay="650">
+          <button class="btn btn-outline load-more-btn" id="load-more-photos">
+            <i class="fas fa-camera" aria-hidden="true"></i>
+            Ver más fotografías
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Photo Info Modal -->
+    <div
+      class="modal fade"
+      id="photoInfoModal"
+      tabindex="-1"
+      aria-labelledby="photoInfoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="photoInfoModalLabel">
+              Información de la Fotografía
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar modal"
+            >
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="photo-info-content">
+              <!-- Content will be loaded dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Equipment Section -->
+    <section class="equipment-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Mi Equipo</h2>
+          <p class="section-subtitle">
+            Las herramientas que uso para capturar cada momento perfecto
+          </p>
+        </div>
+
+        <div class="equipment-grid" data-aos="fade-up" data-aos-delay="200">
+          <div class="equipment-item">
+            <div class="equipment-icon">
+              <i class="fas fa-camera" aria-hidden="true"></i>
+            </div>
+            <h3 class="equipment-title">Cámaras</h3>
+            <p class="equipment-description">
+              Canon EOS R5, Sony α7R IV para máxima calidad y versatilidad en
+              cada sesión.
+            </p>
+          </div>
+
+          <div class="equipment-item">
+            <div class="equipment-icon">
+              <i class="fas fa-eye" aria-hidden="true"></i>
+            </div>
+            <h3 class="equipment-title">Objetivos</h3>
+            <p class="equipment-description">
+              Gama completa de objetivos profesionales, desde gran angular hasta
+              teleobjetivos especializados.
+            </p>
+          </div>
+
+          <div class="equipment-item">
+            <div class="equipment-icon">
+              <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            </div>
+            <h3 class="equipment-title">Iluminación</h3>
+            <p class="equipment-description">
+              Equipo de iluminación profesional para estudio y exteriores,
+              adaptable a cualquier situación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Volver arriba">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p>&copy; 2025 Pelayo Naredo. Todos los derechos reservados.</p>
+          </div>
+          <div class="footer-links">
+            <a href="index.html#contact" class="footer-link">Contacto</a>
+            <a href="index.html" class="footer-link">Inicio</a>
+            <a href="projects.html" class="footer-link">Proyectos</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

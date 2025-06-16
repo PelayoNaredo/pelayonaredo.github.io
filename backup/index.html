@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pelayo Naredo - Desarrollador Web & Fotógrafo</title>
+
+    <!-- SEO Mejorado -->
+    <meta name="description" content="Portfolio de Pelayo Naredo - Desarrollador web especializado en JavaScript, Angular, PHP y diseño responsive. También fotógrafo profesional. Descubre mis proyectos y habilidades." />
+    <meta name="keywords" content="Pelayo Naredo, portfolio, desarrollador web, JavaScript, Angular, PHP, HTML, CSS, React, Node.js, diseño responsivo, frontend, backend, fotografía, Gijón, España" />
+    <meta name="author" content="Pelayo Naredo García" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.pelayonaredo.es" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    
+    <!-- Preload crítico -->
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="preload" href="images/Portadaweb.jpg" as="image" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;900&display=swap" as="style" />
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Fuentes de Google optimizadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+   
+    <!-- Meta para redes sociales (Open Graph) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pelayo Naredo - Desarrollador Web & Fotógrafo" />
+    <meta property="og:description" content="Portfolio profesional de Pelayo Naredo. Desarrollador web y fotógrafo especializado en crear experiencias digitales únicas." />
+    <meta property="og:image" content="https://pelayonaredo.es/images/Portadaweb.jpg" />
+    <meta property="og:url" content="https://pelayonaredo.es" />
+    <meta property="og:site_name" content="Pelayo Naredo Portfolio" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pelayo Naredo - Desarrollador Web & Fotógrafo" />
+    <meta name="twitter:description" content="Portfolio profesional de Pelayo Naredo. Desarrollador web y fotógrafo." />
+    <meta name="twitter:image" content="https://pelayonaredo.es/images/Portadaweb.jpg" />
+    
+    <!-- Color de tema para navegadores -->
+    <meta name="theme-color" content="#d92929" />
+    <meta name="msapplication-TileColor" content="#d92929" />
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pelayo Naredo García",
+      "jobTitle": "Desarrollador Web",
+      "url": "https://pelayonaredo.es",
+      "sameAs": [
+        "https://linkedin.com/in/pelayonaredo",
+        "https://github.com/pelayonaredo"
+      ],
+      "knowsAbout": ["JavaScript", "Angular", "PHP", "HTML", "CSS", "Fotografía"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      }
+    }
+    </script>
+    
+    <!-- Loading spinner styles -->
+    <style>
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #fafafa 0%, #f8f8f8 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #d92929;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+</head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="spinner"></div>
+    </div>
+    <main>
+      <section class="cabecera">
+        <figure>
+          <h1>Pelayo&nbsp;Naredo&nbsp;Garc&iacute;a</h1>
+          <img src="images/Portadaweb.jpg" alt="autor de la pagina" />
+        </figure>
+        <div>
+          <a href="#sobremi" class="titulo activo">Sobre m&iacute; 1.</a>
+          <br />
+          <a href="#proyectos" class="titulo">Proyectos 2.</a> <br />
+          <a href="#fotografia" class="titulo">Fotograf&iacute;a 3.</a>
+          <br />
+          <a href="#curriculum" class="titulo">Curriculum 4.</a> <br />
+          <a href="#contacto" class="titulo">Info de Contacto 5.</a>
+          <br />
+        </div>
+      </section>
+      <section class="intro" id="sobremi">
+        <p>
+          <strong
+            >¡Hola! soy Pelayo, desarrollador web, graduado en turismo y
+            fot&oacute;grafo en mis ratos libres.</strong
+          >
+          Actualmente estoy en <strong>busqueda de trabajo</strong> enfocandome
+          en entender bien la industria y las necesidades tanto de usuarios como
+          de empleadores.
+          <br />
+          En el desarrollo web, mi objetivo es crear
+          <strong>
+            experiencias interactivas, diseños atractivos y p&aacute;ginas
+            originales</strong
+          >. Mi trabajo como fot&oacute;grafo es un valor añadido que potencia
+          atenci&oacute;n al detalle a mis proyectos. Siempre busco aprender y
+          estar al dia con las tendencias para ofrecer soluciones innovadoras y
+          efectivas adaptandome a nuevas tecnologías.
+        </p>
+      </section>
+      <article class="lenguajes">
+        <div class="carousel">
+          <div class="carousel__item"><img src="images/iconHTML.png" alt="HTML" /></div>
+          <div class="carousel__item"><img src="images/iconCSS.png" alt="CSS" /></div>
+          <div class="carousel__item"><img src="images/iconJS.png" alt="JavaScript" /></div>
+          <div class="carousel__item"><img src="images/iconAngular.png" alt="Angular" /></div>
+          <div class="carousel__item"><img src="images/iconPHP.png" alt="PHP" /></div>
+          <div class="carousel__item"><img src="images/iconSQL.png" alt="SQL" /></div>
+          <div class="carousel__item"><img src="images/iconWP.png" alt="WordPress" /></div>
+          <div class="carousel__item"><img src="images/iconLightroom.png" alt="Lightroom" /></div>
+          <div class="carousel__item"><img src="images/iconPS.png" alt="Photoshop" /></div>
+        </div>
+      </article>
+      
+        <div class="cabeceraProy">
+            <h2>PROYECTOS Y TRABAJOS</h2>
+            <p>
+              A continuaci&oacute;n podr&aacute;s ver algunos de mis proyectos
+              realizados a lo largo del &uacute;ltimo a&ntilde;o.
+            </p>
+          </div>
+        <div class="trabajos" id="proyectos">
+          
+          <!-- bloque proyecto ET-->
+          <article class="proyecto">
+            <div class="contenedor">
+              <figure class="portadaProyecto">
+                <img
+                  class="imagen"
+                  src="images/proy-turist.png"
+                  alt="Pagina puntos interés turístico."
+                  onclick="showModal(this)"
+                />
+              </figure>
+              <h3>Puntos de inter&eacute;s tur&iacute;sticos</h3>
+              <div class="infoProyecto">
+                <p>
+                  La p&aacute;gina utiliza datos abiertos del Ayuntamiento de
+                  Gij&oacute;n para mostrar puntos de inter&eacute;s
+                  tur&iacute;sticos como alojamientos, monumentos y museos un
+                  <strong>mapa interactivo</strong>. Este trabajo destaca por la
+                  integraci&oacute;n de
+                  <strong
+                    >APIs, diseño de interfaces intuitivas y gesti&oacute;n
+                    din&aacute;mica de datos</strong
+                  >. El proposito de la p&aacute;gina es ser incorporada en el
+                  futuro por el Ayuntamiento en su pagina web oficial para tener
+                  una forma de mostrar informaci&oacute;n relevante para
+                  visitantes y ciudadanos.
+                </p>
+              </div>
+            </div>
+            <div class="galeria">
+              <figure>
+                <img
+                  src="images/galerias/proy-turist1.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Mapa de leaflet con marcadores personalizados y leyenda. <br> (Coordenadas obtenidas de los datos abiertos de Gijón)"
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-turist2.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Muestra de las tarjetas del apartado de alojamientos."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-turist3.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Muestra de las tarjetas del apartado de museos."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-turist4.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Muestra de las tarjetas del apartado de monumentos."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-turist5.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Muestra de señalización de la ubicacion de un elemento en el mapa."
+                />
+              </figure>
+            </div>
+          </article>
+          <!-- fin bloque proyecto -->
+          <!-- bloque proyecto Interes turístico-->
+          <article class="proyecto">
+            <div class="contenedor">
+              <figure class="portadaProyecto">
+                <img
+                  class="imagen"
+                  src="images/proy-et.png"
+                  alt="Pagina inicio E.T. Gijón acompaña."
+                  onclick="showModal(this)"
+                />
+              </figure>
+              <h3>Escuelas taller "Gij&oacute;n Acompa&ntilde;a"</h3>
+              <div class="infoProyecto">
+                <p>
+                  Escuelas Taller Gij&oacute;n Acompa&ntilde;a es una
+                  p&aacute;gina web que destaca por la
+                  <strong>gesti&oacute;n de contenidos</strong> y
+                  presentaci&oacute;n de informaci&oacute;n. Con un
+                  dise&ntilde;o intuitivo y f&aacute;cil de navegar, los
+                  usuarios pueden acceder r&aacute;pidamente a
+                  informaci&oacute;n actualizada sobre programas, horarios y
+                  eventos. Este proyecto muestra la capacidad para organizar y
+                  presentar datos de manera clara y atractiva, as&iacute; como
+                  la capacidad de <strong>trabajar en equipo</strong> en
+                  proyectos de tama&ntilde;o grande y mediano.
+                  <br />
+                  Para acceder a la página visita el siguiente
+                  <a href="ETW23.github.io">enlace.</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="galeria">
+              <figure>
+                <img
+                  src="images/galerias/proy-et1.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Seccion de noticias auto-actualizable con las secciones incluidas en el html 'noticias'."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-et2.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Apartado de Alumnado con galería y secciones independientes."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-et3.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Agenda de eventos."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-et4.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Pagina de noticias."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-et5.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Seccion de informacion de modulos y certificados."
+                />
+              </figure>
+            </div>
+          </article>
+          <!-- fin bloque proyecto -->
+          <!-- bloque proyecto playas Gijon-->
+          <article class="proyecto">
+            <div class="contenedor">
+              <figure class="portadaProyecto playas">
+                <img
+                  src="images/galerias/proy-playas.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  class="imagen"
+                  alt="Cuadro sobre información en tiempo real de las playas."
+                />
+              </figure>
+              <h3>Aplicaci&oacute;n Web Gij&oacute;n Playas</h3>
+              <div class="infoProyecto">
+                <p>
+                  El apartado <strong>dise&ntilde;ado</strong> para la web
+                  gijon.es/playas ofrece
+                  <strong>informaci&oacute;n en tiempo real</strong> sobre las
+                  condiciones de las playas de Gij&oacute;n. Se destacan los
+                  niveles de seguridad mediante banderas en las escaleras de
+                  acceso, indicando si las condiciones del mar son aptas para el
+                  ba&ntilde;o. Adicionalmente, incluye datos sobre la
+                  temperatura del aire, horarios de pleamar y bajamar, velocidad
+                  del viento y el &iacute;ndice de radiaci&oacute;n
+                  ultravioleta, ayudando a los usuarios a planificar su visita
+                  de manera informada.
+                </p>
+                <br />
+                <p>
+                  La interfaz tambi&eacute;n ofrece datos sobre la calidad
+                  sanitaria del agua en diferentes puntos, confirmando si es
+                  apta para el ba&ntilde;o. Para asegurar la
+                  <strong>seguridad</strong> de los visitantes, se muestran los
+                  horarios de los servicios de salvamento. Proporcionando toda
+                  la informaci&oacute;n relevante de forma clara y accesible,
+                  destacando su <strong>optimización</strong> para su
+                  integraci&oacute;n en la web a trav&eacute;s de un iframe.
+                </p>
+              </div>
+            </div>
+          </article>
+          <!-- fin bloque proyecto -->
+          <!-- bloque proyecto app horarios-->
+          <article class="proyecto">
+            <div class="contenedor">
+              <figure class="portadaProyecto">
+                <img
+                  class="imagen"
+                  src="images/galerias/proy-shifts.png"
+                  alt="Pagina inicio Shifts App"
+                  onclick="showModal(this)"
+                />
+              </figure>
+              <h3>Proyecto App Horarios <br>(WIP)</h3>
+              <div class="infoProyecto">
+                <p>
+                  En este proyecto personal, estoy desarrollando una aplicación con el objetivo de gestionar diversos aspectos clave de un negocio. En ella se incluyen módulos como <strong>turnos</strong>, <strong>ventas</strong>, <strong>inventarios</strong> y <strong>gestión de empleados</strong>. 
+                  A futuro, planeo incorporar un sistema de <strong>gestión de turnos por IA</strong>, que será desarrollado desde el backend, así como un <strong>chat empresarial</strong> para mejorar la comunicación interna.
+                  <br />
+                  El enfoque principal de la aplicación es permitir que los <strong>administradores o gerentes</strong> puedan controlar todas las áreas operativas, mientras que los empleados reciben únicamente la información relevante para el desempeño de sus tareas diarias.
+                  <br />
+                  El <strong>stack tecnológico</strong> utilizado en este proyecto es <strong>React Native, NodeJS, Express</strong> y <strong>MongoDB (MERN)</strong>, seleccionados por su escalabilidad, flexibilidad y facilidad de uso. <br> Además, junto a el se han utilizado tecnologias backend para establecer seguridad de acceso como <strong>JSON Web Tokens, CORS</strong> y <strong>bcrypt</strong>.
+                  <br />
+                  Puedes acceder al proyecto desde el siguiente <a href="https://github.com/PelayoNaredo/app-tb-rn">enlace</a>.
+                </p>
+                
+              </div>
+            </div>
+
+            <div class="galeria">
+              <figure>
+                <img
+                  src="images/galerias/proy-shifts1.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Pagina de empleados de Shifts App."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-shifts2.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Pagina de manejo de ausencias de emplados."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-shifts3.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Tabla de turnos."
+                />
+              </figure>
+              <figure>
+                <img
+                  src="images/galerias/proy-shifts4.png"
+                  class="imagen"
+                  onclick="showModal(this)"
+                  alt="Pagina de configuracion empresarial."
+                />
+              </figure>
+            </div>
+          </article>
+  </div>
+      <div class="cabeceraFoto" id="fotografia">
+        <h2>FOTOGRAF&Iacute;A</h2>
+        <p>
+          A continuaci&oacute;n podr&aacute;s ver algunos de mis trabajos como
+          fotografo freelance.
+        </p>
+      </div>
+      <section class="galeriaFotos">
+        <div class="portadaFotos">
+          <figure class="fotoModa" data-index="0">
+            <img src="images/fotografía/db2.jpg" alt="Deal Black Wear" />
+            <h3>Deal Black Wear</h3>
+          </figure>
+          <figure class="fotoModa" data-index="1">
+            <img src="images/fotografía/hh1.jpg" alt="High Hope Clothing" />
+            <h3>High Hope Clothing</h3>
+          </figure>
+          <figure class="fotoModa" data-index="2">
+            <img src="images/fotografía/onne3.jpg" alt="Ônne Sport Wear" />
+            <h3>Ônne&nbsp;Sport Wear</h3>
+          </figure>
+        </div>
+        <div class="enlaceFotos">
+          <p>
+            Tambien podrás ver algunos de mis trabajos como fotografo en mi otra
+            p&aacute;gina <i>(actualmente descontinuada)</i>
+            <a rel="noopener" href="https://northarder.nicepage.io" target="_blank"
+              >northarder.nicepage.io</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <div class="cabeceraCurri" id="curriculum">
+        <h2>CURRICULUM</h2>
+        <p>
+          Aqui podrás ver mis inquietudes profesionales, estudios y experiencias
+          en el mundo laboral.
+        </p>
+      </div>
+      <section class="curriculum">
+        <article class="estudios">
+          <div class="subtit">
+            <img src="images/estudios.png" alt="logoEstudios" />
+            <h3 class="subCurri">Estudios</h3>
+          </div>
+
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">2014</div>
+              <div class="linea l1"></div>
+              <div class="texto">bachillerato</div>
+            </div>
+            <div class="conteTexto">
+              <p>Estudios finalizados en el I.E.S. de Llanes, Asturias</p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">2021</div>
+              <div class="linea l2"></div>
+              <div class="texto">turismo</div>
+            </div>
+            <div class="conteTexto">
+              <p>Carrera universitaria finalizada en La Laboral (UniOvi)</p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">2023</div>
+              <div class="linea l3"></div>
+              <div class="texto">certificados</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Obtenidos certificados: Confección y publicación de paginas web
+                (IFCD0110 - 560 h) y Desarrollo de aplicaciones con tecnologías
+                web (IFCD0210 -590 h) en E.T. Gijón Acompa&ntilde;a.
+              </p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">2023</div>
+              <div class="linea l4"></div>
+              <div class="texto">cursos</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Realizacion de los siguientes cursos: Curso avanzado IOT - LUCE
+                Gijón (200h), Administración avanzada de WordPress - Bilib(200
+                h) y Creación y administración de una tienda online con
+                PrestaShop - Bilib(80h)
+              </p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">2024</div>
+              <div class="linea l5"></div>
+              <div class="texto">f.p. daw</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Cursando actualmente el F.P. Desarrollo de Aplicaciones Web
+                mediante pruebas libres en CIFP de Avilés (5 asignaturas
+                restantes).
+              </p>
+            </div>
+          </div>
+        </article>
+        <!-- experiencia -->
+        <article class="experiencia">
+          <div class="subtit">
+            <h3 class="subCurri">Experiencia</h3>
+            <img src="images/experiencia.png" alt="" />
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">camarero</div>
+              <div class="linea l6"></div>
+              <div class="texto">2020</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Diversos trabajos de camarero en bares y discotecas de la zona
+                del concejo de Llanes dese 2014 a 2020 en temporadas de verano y
+                festivas.
+              </p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">fotografo&nbsp;freelance</div>
+              <div class="linea l7"></div>
+              <div class="texto">2020</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Desarrollo de la actividad como autonomo de manera ocasional
+                habiendo aprendido de forma autodidacta y tabajando para
+                diversas marcas y particulares.
+              </p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">recepcionista a.c.</div>
+              <div class="linea l8"></div>
+              <div class="texto">2021</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Pracicas como recepcionista en el hotel A.C. by Marriott Gijón
+                para la carrera de Turismo durante el verano de 2021.
+              </p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">profesor&nbsp;fotografia</div>
+              <div class="linea l9"></div>
+              <div class="texto">2022</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Profesor de fotograf&iacute;a y edici&oacute;n para la
+                Universidad Popular de Oviedo bajo Academia Forser. Cursos
+                realizados en modalidad inicial y avanzada para un total de 90
+                alumnos.
+              </p>
+            </div>
+          </div>
+          <div class="esBar">
+            <div class="conteTitulo">
+              <div class="texto">desarrollador&nbsp;web</div>
+              <div class="linea l10"></div>
+              <div class="texto">2024</div>
+            </div>
+            <div class="conteTexto">
+              <p>
+                Trabajo relaizado en Escuelas Taller "Gij&oacute;n
+                Acompa&ntilde;a" para el Ayuntamiento de Gij&oacute;n (2023 -
+                2024). Realizando proyectos de uso de los datos abiertos y
+                obteniendo dos certificados de profesionalidad durante mi
+                estancia ah&iacute;.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="descarga">
+          <p>
+            si quieres consultar mi curriculum completo puedes descargarlo en el
+            siguiente bot&oacute;n:
+          </p>
+          <a class="botonCurri" href="src/CV_PelayoNaredo.pdf">
+            DESCARGAR CURRICULUM &#10515;
+          </a>
+        </article>
+      </section>
+      <div class="cabeceraConta" id="contacto">
+        <h2>CONTACTO</h2>
+        <p>
+          Aquí podrás encontrar mis datos de contacto para cualquier consulta,
+          colaboración o propuesta profesional.
+        </p>
+      </div>
+      <section class="contacto">
+        <div class="formulario">
+          <h4>
+            para consultas, ofertas de trabajo y mas información, puedes
+            contactarme mediante el siguiente formulario:
+          </h4>
+          <form
+            action="https://formspree.io/f/xjkbrpjy"
+            method="POST"
+            id="contactForm"
+          >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="NOMBRE"
+              required
+            />
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="EMAIL"
+              required
+            />
+
+            <textarea
+              id="message"
+              name="message"
+              placeholder="MENSAJE"
+              required
+            ></textarea>
+            <div class="botones">
+              <input type="reset" value="BORRAR" />
+              <input type="submit" value="ENVIAR" />
+            </div>
+          </form>
+
+          <div id="status"></div>
+        </div>
+        <div class="informacion">
+          <h3>Info.</h3>
+          <p>telefono:</p>
+          <p><a href="tel:+34 626734983">626734983</a></p>
+          <p>email:</p>
+          <p><a href="mailto:naredo43@gmail.com">naredo43@gmail.com</a></p>
+          <p>rrss:</p>
+          <div class="rrss">
+            <a
+              rel="noopener"
+              href="https://www.instagram.com/north_arder/"
+              target="_blank"
+              ><img src="images/logoIg.png" alt="instagram"
+            /></a>
+            <a
+              rel="noopener"
+              href="https://www.linkedin.com/in/pelayonaredo"
+              target="_blank"
+              ><img src="images/logoLinkedin.png" alt="linkedin"
+            /></a>
+            <a
+              rel="noopener"
+              href="https://github.com/PelayoNaredo"
+              target="_blank"
+              ><img src="images/logoGithub.png" alt="github"
+            /></a>
+          </div>
+        
+      </section>
+    </main>
+    <footer>Pelayo Naredo - 2024</footer>
+    <div id="myModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-warper">
+        <img class="modal-content" id="img01" alt="imagen selecionada" />
+        <div class="modal-thumbnails" id="modal-thumbnails"></div>
+      </div>
+      <div id="caption"></div>
+    </div>    <script src="js/script.js"></script>
+    
+    <!-- Loading screen script -->
+    <script>
+      window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        setTimeout(() => {
+          loadingScreen.classList.add('fade-out');
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }, 800);
+      });
+    </script>
+  </body>
+</html>
