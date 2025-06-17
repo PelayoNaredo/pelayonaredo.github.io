@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initLazyLoading();
   initAnimations();
   initLightbox();
+  initPhotoModal(); // Nueva función para el modal de imágenes
   initStats();
   initScrollBehavior(); // Initialize scroll behavior for sticky filter
 
@@ -361,9 +362,97 @@ function initScrollBehavior() {
 
   // Agregar listener de scroll
   window.addEventListener("scroll", handleScroll);
-
   // Inicializar estado
   handleScroll();
+}
+
+// Photo Modal Functionality
+function initPhotoModal() {
+  const expandButtons = document.querySelectorAll(".photo-expand-btn");
+  const modal = document.getElementById("photoModal");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("photoModalLabel");
+  const modalDescription = document.getElementById("modalDescription");
+
+  if (!modal || !modalImage || !modalTitle || !modalDescription) {
+    console.warn("Modal elements not found");
+    return;
+  }
+
+  expandButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const imageSrc = this.getAttribute("data-image");
+      const imageTitle = this.getAttribute("data-title");
+      const imageDescription = this.getAttribute("data-description");
+
+      // Set modal content
+      modalImage.src = imageSrc;
+      modalImage.alt = imageTitle;
+      modalTitle.textContent = imageTitle;
+      modalDescription.textContent = imageDescription;
+
+      // Show modal - using Bootstrap 5 syntax
+      if (typeof bootstrap !== "undefined") {
+        const bootstrapModal = new bootstrap.Modal(modal);
+        bootstrapModal.show();
+      } else {
+        // Fallback for manual modal control
+        modal.style.display = "block";
+        modal.classList.add("show");
+        document.body.classList.add("modal-open");
+      }
+    });
+  });
+
+  // Close modal functionality
+  const closeButtons = modal.querySelectorAll('[data-bs-dismiss="modal"]');
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      if (typeof bootstrap !== "undefined") {
+        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+        if (bootstrapModal) {
+          bootstrapModal.hide();
+        }
+      } else {
+        // Fallback for manual modal control
+        modal.style.display = "none";
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+      }
+    });
+  });
+
+  // Close modal when clicking outside
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      if (typeof bootstrap !== "undefined") {
+        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+        if (bootstrapModal) {
+          bootstrapModal.hide();
+        }
+      } else {
+        modal.style.display = "none";
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+      }
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("show")) {
+      if (typeof bootstrap !== "undefined") {
+        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+        if (bootstrapModal) {
+          bootstrapModal.hide();
+        }
+      } else {
+        modal.style.display = "none";
+        modal.classList.remove("show");
+        document.body.classList.remove("modal-open");
+      }
+    }
+  });
 }
 
 // Export functions for external use

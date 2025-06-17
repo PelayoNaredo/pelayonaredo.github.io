@@ -37,11 +37,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
     />
 
     <!-- AOS Animation Library -->
@@ -121,7 +126,7 @@
           <p class="page-subtitle">
             Capturando momentos únicos a través del lente. Una colección de mis
             trabajos fotográficos que van desde paisajes naturales hasta
-            retratos íntimos.
+            publicidad para marcas y moda.
           </p>
         </div>
       </div>
@@ -155,9 +160,9 @@
             <i class="fas fa-user" aria-hidden="true"></i>
             Retratos
           </button>
-          <button class="filter-btn" data-filter="events" aria-pressed="false">
-            <i class="fas fa-calendar-day" aria-hidden="true"></i>
-            Eventos
+          <button class="filter-btn" data-filter="fashion" aria-pressed="false">
+            <i class="fas fa-shirt" aria-hidden="true"></i>
+            Moda
           </button>
           <button class="filter-btn" data-filter="nature" aria-pressed="false">
             <i class="fas fa-leaf" aria-hidden="true"></i>
@@ -190,21 +195,14 @@
                   <p class="photo-category">Paisajes • Naturaleza</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/lagos01.jpg"
-                    data-lightbox="gallery"
-                    data-title="Lagos Cristalinos - Capturando la serenidad de las aguas montañosas"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/lagos01.jpg"
+                    data-title="Lagos Cristalinos"
+                    data-description="Capturando la serenidad de las aguas montañosas"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="lagos01"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -230,21 +228,14 @@
                   <p class="photo-category">Paisajes • Nocturna</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/estrellas01.jpg"
-                    data-lightbox="gallery"
-                    data-title="Cielo Estrellado - La magia de la fotografía nocturna"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/estrellas01.jpg"
+                    data-title="Cielo Estrellado"
+                    data-description="La magia de la fotografía nocturna"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="estrellas01"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -261,30 +252,23 @@
             <div class="photo-container">
               <img
                 src="../images/fotografía/db1.jpg"
-                alt="Retrato artístico en blanco y negro"
+                alt="Retrato artístico para marca"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Retrato Artístico</h3>
-                  <p class="photo-category">Retratos • B&N</p>
+                  <h3 class="photo-title">Deal Black Wear</h3>
+                  <p class="photo-category">Retratos • Marcas</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/db1.jpg"
-                    data-lightbox="gallery"
-                    data-title="Retrato Artístico - Expresión y emoción en blanco y negro"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/db1.jpg"
+                    data-title="Deal Black Wear"
+                    data-description="Retrato artístico con enfoque profesional"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="db1"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -301,30 +285,23 @@
             <div class="photo-container">
               <img
                 src="../images/fotografía/db2.jpg"
-                alt="Retrato profesional"
+                alt="Retrato profesional para marca"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Retrato Profesional</h3>
-                  <p class="photo-category">Retratos • Estudio</p>
+                  <h3 class="photo-title">Deal Black Wear</h3>
+                  <p class="photo-category">Retratos • Luz natural</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/db2.jpg"
-                    data-lightbox="gallery"
-                    data-title="Retrato Profesional - Iluminación y composición estudiada"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/db2.jpg"
+                    data-title="Deal Black Wear"
+                    data-description="Retrato profesional con luz natural"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="db2"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -341,30 +318,23 @@
             <div class="photo-container">
               <img
                 src="../images/fotografía/db3.jpg"
-                alt="Retrato con luz natural"
+                alt="Retrato con luz natural para marca"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Luz Natural</h3>
+                  <h3 class="photo-title">Deal Black Wear</h3>
                   <p class="photo-category">Retratos • Exterior</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/db3.jpg"
-                    data-lightbox="gallery"
-                    data-title="Luz Natural - Aprovechando la iluminación dorada"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/db3.jpg"
+                    data-title="Deal Black Wear"
+                    data-description="Luz natural - Aprovechando la iluminación dorada"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="db3"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -374,37 +344,30 @@
           <!-- Hotel HH1 -->
           <article
             class="photo-item"
-            data-category="events"
+            data-category="fashion"
             data-aos="fade-up"
             data-aos-delay="350"
           >
             <div class="photo-container">
               <img
                 src="../images/fotografía/hh1.jpg"
-                alt="Fotografía de evento en hotel"
+                alt="Fotografía para marca de ropa"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Evento Corporativo</h3>
-                  <p class="photo-category">Eventos • Hotel</p>
+                  <h3 class="photo-title">High Hope Clothing</h3>
+                  <p class="photo-category">Retrato • Exterior</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/hh1.jpg"
-                    data-lightbox="gallery"
-                    data-title="Evento Corporativo - Capturando momentos profesionales"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/hh1.jpg"
+                    data-title="High Hope Clothing"
+                    data-description="Evento corporativo - Capturando momentos profesionales"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="hh1"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -414,37 +377,30 @@
           <!-- Hotel HH2 -->
           <article
             class="photo-item"
-            data-category="events"
+            data-category="fashion"
             data-aos="fade-up"
             data-aos-delay="400"
           >
             <div class="photo-container">
               <img
                 src="../images/fotografía/hh2.jpg"
-                alt="Detalle de evento gastronómico"
+                alt="Marca de ropa centrada en naturaleza"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Gastronomía</h3>
-                  <p class="photo-category">Eventos • Culinario</p>
+                  <h3 class="photo-title">High Hope Clothing</h3>
+                  <p class="photo-category">Retratos • Moda</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/hh2.jpg"
-                    data-lightbox="gallery"
-                    data-title="Gastronomía - Arte culinario en cada detalle"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/hh2.jpg"
+                    data-title="High Hope Clothing"
+                    data-description="Gastronomía - Arte culinario en cada detalle"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="hh2"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -454,37 +410,30 @@
           <!-- Hotel HH3 -->
           <article
             class="photo-item"
-            data-category="events"
+            data-category="fashion"
             data-aos="fade-up"
             data-aos-delay="450"
           >
             <div class="photo-container">
               <img
                 src="../images/fotografía/hh3.jpg"
-                alt="Ambiente de evento nocturno"
+                alt="Imagen promocional para marca de ropa"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Ambiente Nocturno</h3>
-                  <p class="photo-category">Eventos • Noche</p>
+                  <h3 class="photo-title">High Hope Clothing</h3>
+                  <p class="photo-category">Retratos • Luz natural</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/hh3.jpg"
-                    data-lightbox="gallery"
-                    data-title="Ambiente Nocturno - La elegancia de la noche"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/hh3.jpg"
+                    data-title="High Hope Clothing"
+                    data-description="Ambiente nocturno - La elegancia de la noche"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="hh3"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -494,37 +443,30 @@
           <!-- ONNE 1 -->
           <article
             class="photo-item"
-            data-category="portraits events"
+            data-category="portraits"
             data-aos="fade-up"
             data-aos-delay="500"
           >
             <div class="photo-container">
               <img
                 src="../images/fotografía/onne1.jpg"
-                alt="Sesión de fotos profesional"
+                alt="Sesión de fotos profesional para ropa de deporte"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Sesión Profesional</h3>
+                  <h3 class="photo-title">Onne Sport Wear</h3>
                   <p class="photo-category">Retratos • Moda</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/onne1.jpg"
-                    data-lightbox="gallery"
-                    data-title="Sesión Profesional - Estilo y personalidad"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/onne1.jpg"
+                    data-title="Onne Sport Wear"
+                    data-description="Sesión profesional - Estilo y personalidad"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="onne1"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -541,30 +483,23 @@
             <div class="photo-container">
               <img
                 src="../images/fotografía/onne2.jpg"
-                alt="Retrato urbano"
+                alt="Retrato urbano para ropa de deporte Onne Sport Wear"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Retrato Urbano</h3>
-                  <p class="photo-category">Retratos • Urbano</p>
+                  <h3 class="photo-title">Onne Sport Wear</h3>
+                  <p class="photo-category">Retratos • Deportes</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/onne2.jpg"
-                    data-lightbox="gallery"
-                    data-title="Retrato Urbano - Conexión con el entorno"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/onne2.jpg"
+                    data-title="Onne Sport Wear"
+                    data-description="Retrato urbano - Conexión con el entorno"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="onne2"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -581,30 +516,23 @@
             <div class="photo-container">
               <img
                 src="../images/fotografía/onne3.jpg"
-                alt="Expresión artística"
+                alt="Imagen para publicidad de marca"
                 loading="lazy"
               />
               <div class="photo-overlay">
                 <div class="photo-info">
-                  <h3 class="photo-title">Expresión Artística</h3>
-                  <p class="photo-category">Retratos • Arte</p>
+                  <h3 class="photo-title">Onne Sport Wear</h3>
+                  <p class="photo-category">Retratos • Marcas</p>
                 </div>
                 <div class="photo-actions">
-                  <a
-                    href="../images/fotografía/onne3.jpg"
-                    data-lightbox="gallery"
-                    data-title="Expresión Artística - Emociones capturadas"
-                    class="photo-action-btn"
-                    aria-label="Ver imagen en tamaño completo"
+                  <button
+                    class="photo-action-btn photo-expand-btn"
+                    data-image="../images/fotografía/onne3.jpg"
+                    data-title="Onne Sport Wear"
+                    data-description="Expresión artística - Emociones capturadas"
+                    aria-label="Ampliar imagen"
                   >
                     <i class="fas fa-expand" aria-hidden="true"></i>
-                  </a>
-                  <button
-                    class="photo-action-btn photo-info-btn"
-                    data-photo="onne3"
-                    aria-label="Ver información de la foto"
-                  >
-                    <i class="fas fa-info" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -621,20 +549,19 @@
         </div>
       </div>
     </main>
-
-    <!-- Photo Info Modal -->
+    <!-- Photo Modal -->
     <div
       class="modal fade"
-      id="photoInfoModal"
+      id="photoModal"
       tabindex="-1"
-      aria-labelledby="photoInfoModalLabel"
+      aria-labelledby="photoModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title" id="photoInfoModalLabel">
-              Información de la Fotografía
+            <h2 class="modal-title" id="photoModalLabel">
+              <!-- Titulo dinamico -->
             </h2>
             <button
               type="button"
@@ -646,8 +573,9 @@
             </button>
           </div>
           <div class="modal-body">
-            <div id="photo-info-content">
-              <!-- Content will be loaded dynamically -->
+            <div class="photo-modal-content">
+              <img id="modalImage" src="" alt="" class="modal-image" />
+              <p id="modalDescription" class="modal-description"></p>
             </div>
           </div>
         </div>
@@ -671,8 +599,7 @@
             </div>
             <h3 class="equipment-title">Cámaras</h3>
             <p class="equipment-description">
-              Canon EOS R5, Sony α7R IV para máxima calidad y versatilidad en
-              cada sesión.
+              Nikon d7500 para máxima calidad y versatilidad en cada sesión.
             </p>
           </div>
 
@@ -722,8 +649,8 @@
         </div>
       </div>
     </footer>
-
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     <script src="../js/script.js"></script>
