@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AGP - Aplicación de Gestión de PYMEs | Pelayo Naredo</title>
+    <meta
+      name="description"
+      content="AG-PYMEs - Sistema integral de gestión para pequeñas y medianas empresas. Aplicación móvil multiplataforma desarrollada con React Native para gestionar ventas, inventario, empleados y finanzas."
+    />
+    <meta
+      name="keywords"
+      content="gestión PYMEs, React Native, Expo, PostgreSQL, punto de venta, inventario, empleados, aplicación móvil"
+    />
+    <meta name="author" content="Pelayo Naredo" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://pelayonaredo.github.io/projects/agp/"
+    />
+    <meta property="og:title" content="AGP - Aplicación de Gestión de PYMEs" />
+    <meta
+      property="og:description"
+      content="Sistema integral de gestión para PYMEs desarrollado con React Native y PostgreSQL"
+    />
+    <meta property="og:image" content="../../images/AGP/App-logo.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+    <!-- AGP specific CSS -->
+    <link rel="stylesheet" href="./css/agp.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="../../index.html">
+            <span class="logo-text">Pelayo</span>
+            <span class="logo-accent">Naredo</span>
+          </a>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <a href="../../index.html" class="nav-link">Inicio</a>
+          <a href="../../index.html#about" class="nav-link">Sobre mí</a>
+          <a href="../../index.html#skills" class="nav-link">Habilidades</a>
+          <a href="../../index.html#portfolio-preview" class="nav-link"
+            >Portfolio</a
+          >
+          <a href="../index.html" class="nav-link">Proyectos</a>
+          <a href="../../photography/index.html" class="nav-link">Fotografía</a>
+          <a href="../../index.html#formation" class="nav-link">Formación</a>
+          <a href="../../index.html#contact" class="nav-link">Contacto</a>
+        </div>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-background">
+        <div class="hero-pattern"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text" data-aos="fade-up">
+            <nav aria-label="breadcrumb" class="breadcrumb">
+              <a href="../../index.html" class="breadcrumb-link">Inicio</a>
+              <span class="breadcrumb-separator">/</span>
+              <a href="../index.html" class="breadcrumb-link">Proyectos</a>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-current">AGP</span>
+            </nav>
+            <h1 class="hero-title">
+              <span class="hero-title-main">AG-PYMEs</span>
+              <span class="hero-title-sub">Sistema de Gestión Integral</span>
+            </h1>
+            <p class="hero-description">
+              Aplicación móvil multiplataforma desarrollada con React Native y
+              Expo, diseñada específicamente para la gestión integral de
+              pequeñas y medianas empresas. Proporciona herramientas completas
+              para administrar ventas, inventario, empleados, finanzas y
+              planificación empresarial.
+            </p>
+            <div class="hero-tags">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Expo</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+            </div>
+          </div>
+          <div class="hero-logo" data-aos="fade-left" data-aos-delay="200">
+            <div class="logo-container">
+              <img src="../../images/AGP/App-logo.svg" alt="Logo de AG-PYMEs" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="overview-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Resumen del Proyecto</h2>
+          <p class="section-subtitle">
+            Una solución completa para la digitalización de pequeñas y medianas
+            empresas
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="overview-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Multiplataforma</h3>
+            <p>
+              Disponible para iOS, Android y Web con una única base de código
+            </p>
+          </div>
+
+          <div class="overview-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="overview-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Dashboard Inteligente</h3>
+            <p>
+              Métricas en tiempo real, análisis financiero y indicadores de
+              negocio
+            </p>
+          </div>
+
+          <div class="overview-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="overview-icon">
+              <i class="fas fa-cash-register"></i>
+            </div>
+            <h3>Punto de Venta</h3>
+            <p>
+              POS completo con scanner de códigos, impresión térmica y múltiples
+              métodos de pago
+            </p>
+          </div>
+
+          <div class="overview-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="overview-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Base de Datos Robusta</h3>
+            <p>PostgreSQL con arquitectura escalable y backup automático</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Características Principales</h2>
+          <p class="section-subtitle">
+            Funcionalidades diseñadas para optimizar la gestión empresarial
+          </p>
+        </div>
+
+        <!-- Dashboard Feature -->
+        <div class="feature-showcase" data-aos="fade-up">
+          <div class="feature-content">
+            <div class="feature-info">
+              <h3 class="feature-title">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard Inteligente
+              </h3>
+              <p class="feature-description">
+                Panel de control con métricas en tiempo real que proporciona una
+                vista completa del estado del negocio. Incluye análisis
+                financiero, control de inventario y alertas automáticas para una
+                gestión proactiva.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-chart-pie"></i> Métricas financieras en
+                  tiempo real
+                </li>
+                <li>
+                  <i class="fas fa-exclamation-triangle"></i> Sistema de alertas
+                  automáticas
+                </li>
+                <li>
+                  <i class="fas fa-trophy"></i> Rankings de productos más
+                  vendidos
+                </li>
+                <li>
+                  <i class="fas fa-percentage"></i> Indicadores de rentabilidad
+                  y márgenes
+                </li>
+              </ul>
+            </div>
+            <div class="feature-image">
+              <div class="image-placeholder">
+                <i class="fas fa-chart-line"></i>
+                <p>
+                  Dashboard con gráficos interactivos mostrando métricas de
+                  ventas, inventario y análisis financiero
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- POS Feature -->
+        <div class="feature-showcase reverse" data-aos="fade-up">
+          <div class="feature-content">
+            <div class="feature-image">
+              <div class="image-placeholder">
+                <i class="fas fa-cash-register"></i>
+                <p>
+                  Interfaz del punto de venta con scanner de códigos, carrito de
+                  compras y métodos de pago
+                </p>
+              </div>
+            </div>
+            <div class="feature-info">
+              <h3 class="feature-title">
+                <i class="fas fa-cash-register"></i>
+                Punto de Venta Avanzado
+              </h3>
+              <p class="feature-description">
+                Sistema POS completo con funcionalidades avanzadas para ventas
+                rápidas y eficientes. Incluye escáner de códigos de barras,
+                gestión de clientes y generación automática de facturas y
+                recibos.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-barcode"></i> Scanner de códigos de barras
+                  integrado
+                </li>
+                <li>
+                  <i class="fas fa-print"></i> Impresión térmica Bluetooth
+                </li>
+                <li>
+                  <i class="fas fa-credit-card"></i> Múltiples métodos de pago
+                </li>
+                <li>
+                  <i class="fas fa-receipt"></i> Generación de facturas y
+                  presupuestos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inventory Feature -->
+        <div class="feature-showcase" data-aos="fade-up">
+          <div class="feature-content">
+            <div class="feature-info">
+              <h3 class="feature-title">
+                <i class="fas fa-boxes"></i>
+                Gestión de Inventario
+              </h3>
+              <p class="feature-description">
+                Control completo del inventario con alertas automáticas de stock
+                bajo, gestión de proveedores y seguimiento de pedidos. Incluye
+                categorización avanzada y análisis de rotación de productos.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-bell"></i> Alertas de stock bajo automáticas
+                </li>
+                <li>
+                  <i class="fas fa-truck"></i> Gestión de pedidos a proveedores
+                </li>
+                <li>
+                  <i class="fas fa-tags"></i> Categorización y filtrado avanzado
+                </li>
+                <li>
+                  <i class="fas fa-history"></i> Historial completo de
+                  transacciones
+                </li>
+              </ul>
+            </div>
+            <div class="feature-image">
+              <div class="image-placeholder">
+                <i class="fas fa-warehouse"></i>
+                <p>
+                  Panel de inventario mostrando productos, stock, alertas y
+                  gestión de categorías
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Staff Management Feature -->
+        <div class="feature-showcase reverse" data-aos="fade-up">
+          <div class="feature-content">
+            <div class="feature-image">
+              <div class="image-placeholder">
+                <i class="fas fa-users-cog"></i>
+                <p>
+                  Sistema de gestión de empleados con calendario de turnos y
+                  planificación semanal
+                </p>
+              </div>
+            </div>
+            <div class="feature-info">
+              <h3 class="feature-title">
+                <i class="fas fa-users"></i>
+                Gestión de Personal
+              </h3>
+              <p class="feature-description">
+                Administración completa de empleados con sistema de turnos
+                integrado. Incluye planificación de horarios, exportación de
+                calendarios y envío automático de horarios por email.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-calendar-alt"></i> Calendario de turnos
+                  interactivo
+                </li>
+                <li>
+                  <i class="fas fa-file-export"></i> Exportación a CSV y email
+                </li>
+                <li>
+                  <i class="fas fa-copy"></i> Copia automática de semanas
+                  anteriores
+                </li>
+                <li>
+                  <i class="fas fa-user-tag"></i> Gestión de roles y permisos
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Stack Tecnológico</h2>
+          <p class="section-subtitle">
+            Tecnologías modernas para una aplicación robusta y escalable
+          </p>
+        </div>
+
+        <div class="tech-grid">
+          <!-- Frontend -->
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="tech-category-title">
+              <i class="fas fa-mobile-alt"></i>
+              Frontend
+            </h3>
+            <div class="tech-items">
+              <div class="tech-item">
+                <i class="fab fa-react"></i>
+                <div class="tech-info">
+                  <h4>React Native 0.79.2</h4>
+                  <p>Framework multiplataforma</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-rocket"></i>
+                <div class="tech-info">
+                  <h4>Expo 53.0.0</h4>
+                  <p>Plataforma de desarrollo</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-palette"></i>
+                <div class="tech-info">
+                  <h4>React Native Paper</h4>
+                  <p>Componentes Material Design</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-route"></i>
+                <div class="tech-info">
+                  <h4>React Navigation 7.x</h4>
+                  <p>Sistema de navegación</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="tech-category-title">
+              <i class="fas fa-server"></i>
+              Backend
+            </h3>
+            <div class="tech-items">
+              <div class="tech-item">
+                <i class="fab fa-node-js"></i>
+                <div class="tech-info">
+                  <h4>Node.js</h4>
+                  <p>Entorno de ejecución</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-code"></i>
+                <div class="tech-info">
+                  <h4>Express.js</h4>
+                  <p>Framework web</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-key"></i>
+                <div class="tech-info">
+                  <h4>JWT</h4>
+                  <p>Autenticación segura</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-shield-alt"></i>
+                <div class="tech-info">
+                  <h4>bcrypt</h4>
+                  <p>Encriptación de contraseñas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="tech-category-title">
+              <i class="fas fa-database"></i>
+              Base de Datos
+            </h3>
+            <div class="tech-items">
+              <div class="tech-item">
+                <i class="fas fa-elephant"></i>
+                <div class="tech-info">
+                  <h4>PostgreSQL</h4>
+                  <p>Base de datos principal</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-exchange-alt"></i>
+                <div class="tech-info">
+                  <h4>Sequelize</h4>
+                  <p>ORM para Node.js</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-backup"></i>
+                <div class="tech-info">
+                  <h4>Backup Automático</h4>
+                  <p>Scripts de respaldo</p>
+                </div>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-sync"></i>
+                <div class="tech-info">
+                  <h4>Migraciones</h4>
+                  <p>Control de versiones DB</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Arquitectura del Sistema</h2>
+          <p class="section-subtitle">
+            Diseño modular y escalable siguiendo las mejores prácticas
+          </p>
+        </div>
+
+        <div
+          class="architecture-diagram"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="layer frontend-layer">
+            <h3><i class="fas fa-mobile-alt"></i> Frontend</h3>
+            <p>React Native + Expo</p>
+            <div class="layer-details">
+              <span>iOS</span>
+              <span>Android</span>
+              <span>Web</span>
+            </div>
+          </div>
+
+          <div class="layer-separator">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+
+          <div class="layer backend-layer">
+            <h3><i class="fas fa-server"></i> Backend</h3>
+            <p>Node.js + Express</p>
+            <div class="layer-details">
+              <span>API REST</span>
+              <span>JWT Auth</span>
+              <span>Middleware</span>
+            </div>
+          </div>
+
+          <div class="layer-separator">
+            <i class="fas fa-exchange-alt"></i>
+          </div>
+
+          <div class="layer database-layer">
+            <h3><i class="fas fa-database"></i> Base de Datos</h3>
+            <p>PostgreSQL</p>
+            <div class="layer-details">
+              <span>Transacciones</span>
+              <span>Índices</span>
+              <span>Backup</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="architecture-features">
+          <div class="arch-feature" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-expand-arrows-alt"></i>
+            <h4>Escalabilidad</h4>
+            <p>Arquitectura preparada para crecimiento empresarial</p>
+          </div>
+          <div class="arch-feature" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Seguridad</h4>
+            <p>Autenticación JWT y encriptación de datos</p>
+          </div>
+          <div class="arch-feature" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-sync-alt"></i>
+            <h4>Tiempo Real</h4>
+            <p>Sincronización automática entre dispositivos</p>
+          </div>
+          <div class="arch-feature" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Multiplataforma</h4>
+            <p>Una base de código para todas las plataformas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Proceso de Desarrollo</h2>
+          <p class="section-subtitle">
+            Metodología ágil con enfoque en calidad y testing
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+              <h3>Análisis y Planificación</h3>
+              <p>
+                Estudio de requisitos empresariales y diseño de la arquitectura
+                del sistema
+              </p>
+              <ul>
+                <li>Análisis de casos de uso</li>
+                <li>Diseño de base de datos</li>
+                <li>Planificación de sprints</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+              <h3>Desarrollo Backend</h3>
+              <p>
+                Implementación de la API REST con Node.js y configuración de
+                PostgreSQL
+              </p>
+              <ul>
+                <li>API REST con Express</li>
+                <li>Autenticación JWT</li>
+                <li>Modelos de datos con Sequelize</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+              <h3>Desarrollo Frontend</h3>
+              <p>Creación de la aplicación móvil con React Native y Expo</p>
+              <ul>
+                <li>Interfaz responsive</li>
+                <li>Navegación entre pantallas</li>
+                <li>Integración con backend</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+              <h3>Testing y Optimización</h3>
+              <p>Pruebas exhaustivas y optimización de rendimiento</p>
+              <ul>
+                <li>80 casos de prueba ejecutados</li>
+                <li>100% de éxito en pruebas</li>
+                <li>Optimización de performance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results & Metrics -->
+    <section class="results-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">Resultados del Proyecto</h2>
+          <p class="section-subtitle">
+            Métricas de calidad y rendimiento del sistema desarrollado
+          </p>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="metric-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="metric-number">100%</div>
+            <div class="metric-label">Casos de Prueba Exitosos</div>
+            <p>80 casos de prueba ejecutados con éxito completo</p>
+          </div>
+
+          <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="metric-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="metric-number">3</div>
+            <div class="metric-label">Plataformas Soportadas</div>
+            <p>iOS, Android y Web con una única base de código</p>
+          </div>
+
+          <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="metric-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="metric-number">&lt;3s</div>
+            <div class="metric-label">Tiempo de Carga</div>
+            <p>Carga inicial optimizada para mejor experiencia</p>
+          </div>
+
+          <div class="metric-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="metric-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <div class="metric-number">10+</div>
+            <div class="metric-label">Módulos Integrados</div>
+            <p>Ventas, inventario, empleados, finanzas y más</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+          <h2 class="cta-title">¿Interesado en el Proyecto?</h2>
+          <p class="cta-description">
+            AG-PYMEs representa un ejemplo completo de desarrollo de aplicación
+            empresarial con tecnologías modernas. Si tienes un proyecto similar
+            o quieres conocer más detalles sobre la implementación, no dudes en
+            contactarme.
+          </p>
+          <div class="cta-buttons">
+            <a href="../../index.html#contact" class="btn btn-primary">
+              <i class="fas fa-envelope"></i>
+              Contactar
+            </a>
+            <a href="../index.html" class="btn btn-outline">
+              <i class="fas fa-arrow-left"></i>
+              Ver Otros Proyectos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="logo-text">Pelayo</span>
+            <span class="logo-text logo-accent">Naredo</span>
+          </div>
+
+          <div class="footer-text">
+            <p>&copy; 2024 Pelayo Naredo. Todos los derechos reservados.</p>
+            <p>Desarrollador Web & Fotógrafo</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

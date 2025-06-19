@@ -77,9 +77,24 @@
           <a href="#home" class="nav-link active">Inicio</a>
           <a href="#about" class="nav-link">Sobre mí</a>
           <a href="#skills" class="nav-link">Habilidades</a>
-          <a href="#portfolio-preview" class="nav-link">Portfolio</a>
-          <a href="./projects/index.html" class="nav-link">Proyectos</a>
-          <a href="./photography/index.html" class="nav-link">Fotografía</a>
+          <div class="nav-dropdown">
+            <a href="#portfolio-preview" class="nav-link dropdown-toggle">
+              Portfolio
+              <i class="fas fa-chevron-down dropdown-icon"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="./projects/index.html" class="dropdown-item">
+                <i class="fas fa-code"></i>
+                <span>Proyectos</span>
+                <small>Desarrollo Web</small>
+              </a>
+              <a href="./photography/index.html" class="dropdown-item">
+                <i class="fas fa-camera"></i>
+                <span>Fotografía</span>
+                <small>Portfolio Visual</small>
+              </a>
+            </div>
+          </div>
           <a href="#formation" class="nav-link">Formación</a>
           <a href="#contact" class="nav-link">Contacto</a>
         </div>
@@ -154,7 +169,7 @@
           <div class="profile-card" data-aos="fade-right">
             <div class="profile-image">
               <img
-                src="./images/Portada web-2.jpg"
+                src="./images/ProfilePic.png"
                 alt="Pelayo Naredo - Desarrollador Web y Fotógrafo"
                 class="profile-img"
               />

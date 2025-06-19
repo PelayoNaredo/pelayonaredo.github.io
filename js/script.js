@@ -16,6 +16,7 @@ const contactForm = document.getElementById("contact-form");
 document.addEventListener("DOMContentLoaded", function () {
   initializeAOS();
   initializeNavigation();
+  initializeDropdownMenu();
   initializeScrollEffects();
   initializeTypewriter();
   initializeSkillBars();
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeProjectFilters();
   initializeContactForm();
   initializeLazyLoading();
+  createProgressIndicator();
+  createScrollToTop();
 });
 
 // ===== AOS INITIALIZATION =====
@@ -216,6 +219,92 @@ function announceToScreenReader(message) {
   setTimeout(() => {
     document.body.removeChild(announcement);
   }, 1000);
+}
+
+// ===== DROPDOWN MENU =====
+function initializeDropdownMenu() {
+  const dropdowns = document.querySelectorAll(".nav-dropdown");
+
+  dropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector(".dropdown-toggle");
+    const menu = dropdown.querySelector(".dropdown-menu");
+    const icon = dropdown.querySelector(".dropdown-icon");
+
+    if (!toggle || !menu) return;
+
+    // Handle click on dropdown toggle for mobile
+    toggle.addEventListener("click", function (e) {
+      // On mobile, handle dropdown toggle
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle("mobile-active");
+
+        // Announce state change to screen readers
+        const isActive = dropdown.classList.contains("mobile-active");
+        announceToScreenReader(
+          isActive ? "Submenú abierto" : "Submenú cerrado"
+        );
+      }
+    });
+
+    // Handle keyboard navigation
+    toggle.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("mobile-active");
+        } else {
+          // On desktop, focus first dropdown item
+          const firstItem = menu.querySelector(".dropdown-item");
+          if (firstItem) firstItem.focus();
+        }
+      }
+
+      if (e.key === "Escape") {
+        dropdown.classList.remove("mobile-active");
+        toggle.focus();
+      }
+    });
+
+    // Handle dropdown items keyboard navigation
+    const dropdownItems = menu.querySelectorAll(".dropdown-item");
+    dropdownItems.forEach((item, index) => {
+      item.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          const nextItem = dropdownItems[index + 1] || dropdownItems[0];
+          nextItem.focus();
+        }
+
+        if (e.key === "ArrowUp") {
+          e.preventDefault();
+          const prevItem =
+            dropdownItems[index - 1] || dropdownItems[dropdownItems.length - 1];
+          prevItem.focus();
+        }
+
+        if (e.key === "Escape") {
+          dropdown.classList.remove("mobile-active");
+          toggle.focus();
+        }
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("mobile-active");
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768) {
+        dropdown.classList.remove("mobile-active");
+      }
+    });
+  });
 }
 
 // ===== SCROLL EFFECTS =====
@@ -868,5 +957,156 @@ console.log(
   "color: #10b981; font-size: 14px;"
 );
 
-// ===== PORTFOLIO TABS =====
-// Portfolio tabs functionality removed - redesigned work section
+// ===== PROGRESS BAR AND SCROLL TO TOP =====
+function createProgressIndicator() {
+  const progressBar = document.createElement("div");
+  progressBar.className = "scroll-progress";
+  progressBar.innerHTML = '<div class="scroll-progress-bar"></div>';
+
+  const progressCSS = `
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(37, 99, 235, 0.1);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .scroll-progress.visible {
+      opacity: 1;
+    }
+    
+    .scroll-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+  `;
+
+  const style = document.createElement("style");
+  style.textContent = progressCSS;
+  document.head.appendChild(style);
+  document.body.appendChild(progressBar);
+
+  const progressBarInner = progressBar.querySelector(".scroll-progress-bar");
+
+  window.addEventListener("scroll", () => {
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+
+    progressBarInner.style.width = scrolled + "%";
+
+    if (winScroll > 100) {
+      progressBar.classList.add("visible");
+    } else {
+      progressBar.classList.remove("visible");
+    }
+  });
+}
+
+function createScrollToTop() {
+  const scrollTopBtn = document.createElement("button");
+  scrollTopBtn.className = "scroll-to-top";
+  scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+  scrollTopBtn.setAttribute("aria-label", "Volver arriba");
+
+  const scrollTopCSS = `
+    .scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 55px;
+      height: 55px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    }
+    
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+    }
+    
+    .scroll-to-top:active {
+      transform: translateY(-1px);
+    }
+    
+    .scroll-to-top:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+    
+    @media (max-width: 768px) {
+      .scroll-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .scroll-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+    }
+  `;
+
+  const style = document.createElement("style");
+  style.textContent = scrollTopCSS;
+  document.head.appendChild(style);
+  document.body.appendChild(scrollTopBtn);
+
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    // Announce to screen readers
+    announceToScreenReader("Volviendo al inicio de la página");
+  });
+
+  // Add keyboard support
+  scrollTopBtn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      scrollTopBtn.click();
+    }
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 400) {
+      scrollTopBtn.classList.add("visible");
+    } else {
+      scrollTopBtn.classList.remove("visible");
+    }
+  });
+}

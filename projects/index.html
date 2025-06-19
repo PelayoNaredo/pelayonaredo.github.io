@@ -159,12 +159,89 @@
     <main class="projects-main">
       <div class="container">
         <div class="projects-grid" id="projects-grid">
-          <!-- Proyecto 1: ET Gijon Acompaña -->
+          <!-- Proyecto Destacado: AGP -->
+          <article
+            class="project-card project-featured"
+            data-category="fullstack"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="project-image">
+              <img
+                src="../images/AGP/App-logo.svg"
+                alt="AGP - Logo de la Aplicación de gestión de PYMEs"
+                loading="lazy"
+              />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a
+                    href="./agp/"
+                    class="btn-icon featured-project-link"
+                    aria-label="Ver página del proyecto AGP"
+                  >
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    <span>Ver Proyecto</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">
+                  AGP - Aplicación de Gestión de PYMEs
+                </h3>
+                <div class="project-tags">
+                  <span class="project-tag tag-mysql">React Native</span>
+                  <span class="project-tag tag-php">PostgreSQL</span>
+                  <span class="project-tag tag-js">JavaScript</span>
+                  <span class="project-tag tag-featured"
+                    >Proyecto Destacado</span
+                  >
+                </div>
+              </div>
+              <p class="project-description">
+                Sistema completo para la gestión integral de PYMEs desarrollado
+                con tecnologías modernas. Incluye funcionalidades avanzadas como
+                gestión de horarios y citas, gestión de inventarios y
+                proveedores, sistema de notificaciones, punto de venta completo
+                y gestión de clientes. Todo integrado con reportes automáticos y
+                un diseño intuitivo y responsivo que funciona tanto en
+                dispositivos móviles como en escritorio.
+              </p>
+              <div class="project-features">
+                <div class="feature-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <span>Gestión de horarios y citas</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-wallet" aria-hidden="true"></i>
+                  <span>Punto de venta integrado</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-mobile" aria-hidden="true"></i>
+                  <span>Aplicación multiplataforma</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-chart-line" aria-hidden="true"></i>
+                  <span>Reportes y analíticas</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-boxes" aria-hidden="true"></i>
+                  <span>Gestión de inventarios</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-bell" aria-hidden="true"></i>
+                  <span>Sistema de notificaciones</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Proyecto 2: ET Gijon Acompaña -->
           <article
             class="project-card"
             data-category="fullstack"
             data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos-delay="200"
           >
             <div class="project-image">
               <img
@@ -172,35 +249,7 @@
                 alt="Página web para la escuela taller ET Gijón Acompaña"
                 loading="lazy"
               />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <button
-                    class="btn-icon project-view-btn"
-                    data-project="ETGijonAcompaña"
-                    aria-label="Ver detalles del proyecto ETGijonAcompaña"
-                  >
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                  </button>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver código fuente en GitHub"
-                  >
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver demo en vivo"
-                  >
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
+              <div class="project-overlay"></div>
             </div>
             <div class="project-content">
               <div class="project-header">
@@ -233,13 +282,12 @@
               </div>
             </div>
           </article>
-
-          <!-- Proyecto 2: Puntos de interes turistico -->
+          <!-- Proyecto 3: Puntos de interes turistico -->
           <article
             class="project-card"
             data-category="frontend"
             data-aos="fade-up"
-            data-aos-delay="200"
+            data-aos-delay="300"
           >
             <div class="project-image">
               <img
@@ -247,35 +295,7 @@
                 alt="Puntos de interes turistico - Aplicación de turismo"
                 loading="lazy"
               />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <button
-                    class="btn-icon project-view-btn"
-                    data-project="Puntos de interes turistico"
-                    aria-label="Ver detalles del proyecto Puntos de interes turistico"
-                  >
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                  </button>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver código fuente en GitHub"
-                  >
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver demo en vivo"
-                  >
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
+              <div class="project-overlay"></div>
             </div>
             <div class="project-content">
               <div class="project-header">
@@ -307,83 +327,6 @@
               </div>
             </div>
           </article>
-
-          <!-- Proyecto 3: WorkShifts -->
-          <article
-            class="project-card"
-            data-category="fullstack"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="project-image">
-              <img
-                src="../images/galerias/proy-shifts.png"
-                alt="AGP - Aplicación de gestión de PYMEs"
-                loading="lazy"
-              />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <button
-                    class="btn-icon project-view-btn"
-                    data-project="AGP"
-                    aria-label="Ver detalles del proyecto AGP"
-                  >
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                  </button>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver código fuente en GitHub"
-                  >
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver demo en vivo"
-                  >
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="project-content">
-              <div class="project-header">
-                <h3 class="project-title">AGP</h3>
-                <div class="project-tags">
-                  <span class="project-tag tag-mysql">React native</span>
-                  <span class="project-tag tag-php">PostgreSQL</span>
-                  <span class="project-tag tag-js">Javascript</span>
-                </div>
-              </div>
-              <p class="project-description">
-                Sistema completo para la gestión completa de PYMEs. Incluye
-                funcionalidades avanzadas como gestión de horarios y citas,
-                gestion de inventarios y proveedores, notificaciones, punto de
-                venta y gestion de clientes. Todo con reportes automáticos y un
-                diseño intuitivo y responsivo.
-              </p>
-              <div class="project-features">
-                <div class="feature-item">
-                  <i class="fas fa-clock" aria-hidden="true"></i>
-                  <span>Gestión de horarios</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-wallet" aria-hidden="true"></i>
-                  <span>Punto de venta</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-mobile" aria-hidden="true"></i>
-                  <span>Aplicación Multiplataforma</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
           <!-- Proyecto 4: PlaysBeach -->
           <article
             class="project-card"
@@ -397,35 +340,7 @@
                 alt="Gijon Playas - Portal de playas"
                 loading="lazy"
               />
-              <div class="project-overlay">
-                <div class="project-links">
-                  <button
-                    class="btn-icon project-view-btn"
-                    data-project="playsBeach"
-                    aria-label="Ver detalles del proyecto PlaysBeach"
-                  >
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                  </button>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver código fuente en GitHub"
-                  >
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                  </a>
-                  <a
-                    href="#"
-                    class="btn-icon"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ver demo en vivo"
-                  >
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
+              <div class="project-overlay"></div>
             </div>
             <div class="project-content">
               <div class="project-header">

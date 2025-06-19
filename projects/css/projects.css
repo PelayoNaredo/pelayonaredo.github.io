@@ -295,6 +295,7 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2.5rem;
   margin-bottom: 4rem;
+  align-items: start; /* Alinear elementos al inicio */
 }
 
 /* Project Cards */
@@ -395,6 +396,8 @@
 .project-tags {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -594,6 +597,207 @@
 
 .thumbnail.active {
   border-color: var(--primary-color);
+}
+
+/* Proyecto Destacado */
+.project-featured {
+  grid-column: 1 / -1; /* Ocupa todo el ancho disponible */
+  max-width: none;
+  display: grid;
+  grid-template-rows: auto 1fr; /* Imagen arriba, contenido abajo */
+  gap: 0;
+  padding: 0;
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    rgba(var(--primary-rgb), 0.05) 100%
+  );
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.1);
+  overflow: hidden;
+}
+
+.project-featured:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(var(--primary-rgb), 0.2);
+}
+
+.project-featured .project-image {
+  width: 100%;
+  height: 400px; /* Altura más prominente */
+  border-radius: 0; /* Sin border radius para ocupar todo el ancho */
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-featured .project-image img {
+  width: auto;
+  height: 60%;
+  max-width: 300px;
+  object-fit: contain; /* Para logos es mejor contain que cover */
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.project-featured .project-content {
+  padding: 2.5rem;
+}
+
+.project-featured .project-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.project-featured .project-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-featured .project-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-featured .feature-item {
+  padding: 1.5rem;
+  background: rgba(var(--primary-rgb), 0.1);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  text-align: center;
+  transition: var(--transition-medium);
+}
+
+.project-featured .feature-item:hover {
+  background: rgba(var(--primary-rgb), 0.15);
+  transform: translateY(-5px);
+}
+
+.project-featured .feature-item i {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.project-featured .feature-item span {
+  font-weight: 500;
+}
+
+/* Estilos específicos para el overlay del proyecto destacado */
+.project-featured .project-overlay {
+  background: rgba(var(--primary-rgb), 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.featured-project-link {
+  width: auto !important;
+  height: auto !important;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-lg) !important;
+  background: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featured-project-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.3);
+}
+
+.featured-project-link i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.featured-project-link:hover i {
+  transform: translateX(5px);
+}
+
+.featured-project-link span {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Tag especial para proyecto destacado */
+.tag-featured {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive para proyecto destacado */
+@media (max-width: 768px) {
+  .project-featured .project-image {
+    height: 300px;
+  }
+
+  .project-featured .project-image img {
+    height: 50%;
+    max-width: 200px;
+  }
+
+  .project-featured .project-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .project-featured .project-title {
+    font-size: 2rem;
+  }
+
+  .project-featured .project-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-featured .feature-item {
+    padding: 1rem;
+  }
 }
 
 /* Responsive Design */
