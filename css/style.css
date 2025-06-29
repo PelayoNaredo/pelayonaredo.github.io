@@ -429,10 +429,11 @@ small {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
+  display: flex !important;
+  justify-content: space-between !important;
   align-items: center;
   height: 70px;
+  width: 100%; /* Asegurar que ocupe el ancho completo */
 }
 
 .nav-logo a {
@@ -693,6 +694,25 @@ small {
 
 .dropdown-item:hover small {
   color: var(--primary-color);
+}
+
+/* Desktop/Mobile visibility controls */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
 }
 
 /* Responsive dropdown styles */
@@ -1014,6 +1034,7 @@ small {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   color: white;
   text-decoration: none;
   font-size: 0.9rem;
@@ -1025,6 +1046,8 @@ small {
 }
 
 .scroll-arrow {
+  justify-content: center;
+  align-items: center;
   width: 2px;
   height: 30px;
   margin-top: 0.5rem;
@@ -1034,6 +1057,7 @@ small {
 
 .scroll-arrow::after {
   content: "";
+  right: 12px;
   position: absolute;
   width: 10px;
   height: 10px;
@@ -3227,4 +3251,197 @@ section {
 .icon-wordpress {
   font-size: 32px;
   color: #21759b;
+}
+
+/* ===== FOOTER STYLES ===== */
+.footer {
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    rgba(var(--primary-rgb), 0.05) 50%,
+    var(--bg-secondary) 100%
+  );
+  border-top: 1px solid var(--border-primary);
+  padding: 3rem 0 2rem;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-color) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  gap: 0.25rem;
+}
+
+.footer-logo .logo-text {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-logo .logo-accent {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-text {
+  text-align: right;
+  color: var(--text-secondary);
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: var(--size-sm);
+  line-height: 1.5;
+}
+
+.footer-text p:first-child {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.footer-text p:last-child {
+  font-size: var(--size-xs);
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Hover effect for footer logo */
+.footer-logo {
+  transition: var(--transition-medium);
+  cursor: default;
+}
+
+.footer-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-logo:hover .logo-text {
+  color: var(--primary-color);
+}
+
+.footer-logo:hover .logo-accent {
+  color: var(--secondary-color);
+}
+
+/* Responsive footer styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 1.3rem;
+  }
+
+  .footer-logo .logo-text,
+  .footer-logo .logo-accent {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-size: 1.2rem;
+  }
+
+  .footer-logo .logo-text,
+  .footer-logo .logo-accent {
+    font-size: 1.2rem;
+  }
+
+  .footer-text p {
+    font-size: var(--size-xs);
+  }
+
+  .footer-text p:last-child {
+    font-size: 0.8rem;
+  }
+}
+
+/* Enhanced accessibility for footer */
+.footer-logo:focus-within {
+  outline: var(--focus-outline-width) solid var(--focus-ring);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: var(--radius-md);
+}
+
+/* Add subtle animation on scroll into view */
+.footer {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: footerFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes footerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elegant decoration elements */
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-color) 50%,
+    transparent 100%
+  );
+  opacity: 0.7;
 }

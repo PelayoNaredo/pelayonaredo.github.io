@@ -365,6 +365,211 @@ function getProjectDetails(projectId) {
   return projects[projectId] || "<p>Detalles del proyecto no disponibles.</p>";
 }
 
+// ===== PROJECT GALLERY FUNCTIONALITY =====
+function openProjectGallery(projectId) {
+  const galleries = {
+    "et-gijon": {
+      title: "Escuelas Taller Gijón Acompaña",
+      images: [
+        "../images/galerias/proy-et1.png",
+        "../images/galerias/proy-et2.png",
+        "../images/galerias/proy-et3.png",
+        "../images/galerias/proy-et4.png",
+        "../images/galerias/proy-et5.png",
+      ],
+      description:
+        "Sistema web completo para la gestión de la escuela taller ET Gijón Acompaña. Incluye gestión de cursos, alumnos, eventos y noticias con un diseño moderno y responsive.",
+    },
+    turistico: {
+      title: "Puntos de Interés Turístico",
+      images: [
+        "../images/galerias/proy-turist1.png",
+        "../images/galerias/proy-turist2.png",
+        "../images/galerias/proy-turist3.png",
+        "../images/galerias/proy-turist4.png",
+        "../images/galerias/proy-turist5.png",
+      ],
+      description:
+        "Aplicación web responsive para la promoción turística con mapas interactivos, galería de imágenes y gestión de datos abiertos.",
+    },
+    playas: {
+      title: "Gijón Playas",
+      images: [
+        "../images/galerias/proy-playas.png",
+        "../images/galerias/proy-shifts.png",
+        "../images/galerias/proy-shifts1.png",
+        "../images/galerias/proy-shifts2.png",
+        "../images/galerias/proy-shifts3.png",
+        "../images/galerias/proy-shifts4.png",
+      ],
+      description:
+        "Módulo para el portal web del ayuntamiento de Gijón dedicado a la visualización del estado en tiempo real de las playas.",
+    },
+  };
+
+  const gallery = galleries[projectId];
+  if (!gallery) {
+    console.error(`Galería no encontrada para el proyecto: ${projectId}`);
+    return;
+  }
+
+  // Crear contenido del modal
+  const modalContent = createGalleryModalContent(gallery);
+
+  // Insertar contenido en el modal
+  const modalBody = document.querySelector("#project-details-content");
+  modalBody.innerHTML = modalContent;
+
+  // Actualizar título del modal
+  const modalTitle = document.querySelector("#projectModalLabel");
+  modalTitle.textContent = gallery.title;
+  // Mostrar modal
+  projectModal.style.display = "block";
+  projectModal.classList.add("show");
+  document.body.classList.add("modal-open");
+
+  // Agregar backdrop
+  if (!document.querySelector(".modal-backdrop")) {
+    const backdrop = document.createElement("div");
+    backdrop.className = "modal-backdrop fade show";
+    document.body.appendChild(backdrop);
+
+    // Cerrar modal al hacer clic en el backdrop
+    backdrop.addEventListener("click", closeModal);
+  }
+
+  // Inicializar galería después de que el modal esté visible
+  setTimeout(() => {
+    initializeGallerySlider();
+  }, 300);
+}
+
+function createGalleryModalContent(gallery) {
+  const imagesHtml = gallery.images
+    .map(
+      (image, index) => `
+    <div class="gallery-slide ${
+      index === 0 ? "active" : ""
+    }" data-slide="${index}">
+      <img src="${image}" alt="${gallery.title} - Imagen ${
+        index + 1
+      }" loading="lazy">
+    </div>
+  `
+    )
+    .join("");
+
+  const thumbnailsHtml = gallery.images
+    .map(
+      (image, index) => `
+    <button class="gallery-thumbnail ${index === 0 ? "active" : ""}" 
+            onclick="goToSlide(${index})" 
+            data-slide="${index}">
+      <img src="${image}" alt="Miniatura ${index + 1}" loading="lazy">
+    </button>
+  `
+    )
+    .join("");
+
+  return `
+    <div class="project-gallery">
+      <div class="gallery-description">
+        <p>${gallery.description}</p>
+      </div>
+      
+      <div class="gallery-slider">
+        <div class="gallery-container">
+          ${imagesHtml}
+        </div>
+        
+        <button class="gallery-nav gallery-prev" onclick="previousSlide()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="gallery-nav gallery-next" onclick="nextSlide()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="gallery-indicators">
+          <span class="current-slide">1</span> / <span class="total-slides">${gallery.images.length}</span>
+        </div>
+      </div>
+      
+      <div class="gallery-thumbnails">
+        ${thumbnailsHtml}
+      </div>
+    </div>
+  `;
+}
+
+// Variables para el slider de galería
+let currentSlideIndex = 0;
+let totalSlides = 0;
+
+function initializeGallerySlider() {
+  const slides = document.querySelectorAll(".gallery-slide");
+  totalSlides = slides.length;
+  currentSlideIndex = 0;
+  updateSlideIndicators();
+}
+
+function goToSlide(slideIndex) {
+  const slides = document.querySelectorAll(".gallery-slide");
+  const thumbnails = document.querySelectorAll(".gallery-thumbnail");
+
+  // Remover clase active de todas las slides y thumbnails
+  slides.forEach((slide) => slide.classList.remove("active"));
+  thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+
+  // Agregar clase active a la slide y thumbnail actual
+  if (slides[slideIndex]) {
+    slides[slideIndex].classList.add("active");
+    thumbnails[slideIndex].classList.add("active");
+    currentSlideIndex = slideIndex;
+    updateSlideIndicators();
+  }
+}
+
+function nextSlide() {
+  const nextIndex = (currentSlideIndex + 1) % totalSlides;
+  goToSlide(nextIndex);
+}
+
+function previousSlide() {
+  const prevIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+  goToSlide(prevIndex);
+}
+
+function updateSlideIndicators() {
+  const currentElement = document.querySelector(".current-slide");
+  const totalElement = document.querySelector(".total-slides");
+
+  if (currentElement) {
+    currentElement.textContent = currentSlideIndex + 1;
+  }
+  if (totalElement) {
+    totalElement.textContent = totalSlides;
+  }
+}
+
+// Cerrar modal con tecla Escape
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && projectModal.classList.contains("show")) {
+    closeModal();
+  }
+});
+
+function closeModal() {
+  // Remover backdrop
+  const backdrop = document.querySelector(".modal-backdrop");
+  if (backdrop) {
+    backdrop.remove();
+  }
+
+  projectModal.style.display = "none";
+  projectModal.classList.remove("show");
+  document.body.classList.remove("modal-open");
+}
+
 // ===== PROJECT ANIMATIONS =====
 function initializeProjectAnimations() {
   // Intersection Observer for scroll animations
@@ -420,5 +625,13 @@ document.addEventListener("keydown", function (e) {
 
       buttons[nextIndex].focus();
     }
+  }
+});
+
+// Agregar funcionalidad al botón de cerrar del modal
+document.addEventListener("DOMContentLoaded", function () {
+  const closeBtn = document.querySelector(".btn-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
   }
 });

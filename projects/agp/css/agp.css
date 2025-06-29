@@ -852,6 +852,8 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: var(--transition-medium);
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }
 
 .feature-video:hover {
@@ -861,9 +863,7 @@
 
 .feature-video video {
   width: 100%;
-  height: auto;
-  min-height: 300px;
-  max-height: 400px;
+  height: 100%;
   object-fit: cover;
   display: block;
   background: var(--bg-card);
@@ -1426,6 +1426,43 @@
   .shape-2,
   .shape-3 {
     display: none;
+  }
+
+  /* Features section - Móvil */
+  .feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .feature-showcase.reverse .feature-content {
+    direction: ltr;
+    flex-direction: column;
+  }
+
+  .feature-info {
+    order: 1;
+  }
+
+  .feature-image {
+    order: 2;
+  }
+
+  .feature-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-description {
+    font-size: 1rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tech-category {
+    padding: 2rem;
   }
 }
 

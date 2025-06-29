@@ -232,29 +232,57 @@ function initializeDropdownMenu() {
 
     if (!toggle || !menu) return;
 
+    // Add a data attribute to track if dropdown has been opened
+    dropdown.setAttribute("data-opened", "false");
+
     // Handle click on dropdown toggle for mobile
     toggle.addEventListener("click", function (e) {
       // On mobile, handle dropdown toggle
       if (window.innerWidth <= 768) {
-        e.preventDefault();
-        dropdown.classList.toggle("mobile-active");
+        const hasBeenOpened = dropdown.getAttribute("data-opened") === "true";
+        const isCurrentlyActive = dropdown.classList.contains("mobile-active");
 
-        // Announce state change to screen readers
-        const isActive = dropdown.classList.contains("mobile-active");
-        announceToScreenReader(
-          isActive ? "Submenú abierto" : "Submenú cerrado"
-        );
+        // If dropdown hasn't been opened yet, or it's currently active (clicking to close)
+        // prevent navigation and toggle dropdown
+        if (!hasBeenOpened || isCurrentlyActive) {
+          e.preventDefault();
+          dropdown.classList.toggle("mobile-active");
+
+          // Mark as opened when activating
+          if (dropdown.classList.contains("mobile-active")) {
+            dropdown.setAttribute("data-opened", "true");
+          }
+
+          // Announce state change to screen readers
+          const isActive = dropdown.classList.contains("mobile-active");
+          announceToScreenReader(
+            isActive ? "Submenú abierto" : "Submenú cerrado"
+          );
+        }
+        // If dropdown has been opened and is currently closed, allow navigation
+        // (no preventDefault, so the link will work normally)
       }
-    });
-
-    // Handle keyboard navigation
+    }); // Handle keyboard navigation
     toggle.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-
         if (window.innerWidth <= 768) {
-          dropdown.classList.toggle("mobile-active");
+          const hasBeenOpened = dropdown.getAttribute("data-opened") === "true";
+          const isCurrentlyActive =
+            dropdown.classList.contains("mobile-active");
+
+          // Only prevent default and toggle if hasn't been opened or is currently active
+          if (!hasBeenOpened || isCurrentlyActive) {
+            e.preventDefault();
+            dropdown.classList.toggle("mobile-active");
+
+            // Mark as opened when activating
+            if (dropdown.classList.contains("mobile-active")) {
+              dropdown.setAttribute("data-opened", "true");
+            }
+          }
+          // If has been opened and is currently closed, allow normal navigation
         } else {
+          e.preventDefault();
           // On desktop, focus first dropdown item
           const firstItem = menu.querySelector(".dropdown-item");
           if (firstItem) firstItem.focus();
@@ -289,19 +317,19 @@ function initializeDropdownMenu() {
           toggle.focus();
         }
       });
-    });
-
-    // Close dropdown when clicking outside
+    }); // Close dropdown when clicking outside
     document.addEventListener("click", function (e) {
       if (!dropdown.contains(e.target)) {
         dropdown.classList.remove("mobile-active");
       }
     });
 
-    // Handle window resize
+    // Handle window resize - reset dropdown state when switching between mobile/desktop
     window.addEventListener("resize", function () {
       if (window.innerWidth > 768) {
         dropdown.classList.remove("mobile-active");
+        // Reset the opened state when switching to desktop
+        dropdown.setAttribute("data-opened", "false");
       }
     });
   });
