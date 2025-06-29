@@ -87,44 +87,177 @@
         </button>
       </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-background">
         <div class="hero-pattern"></div>
+        <div class="hero-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+        </div>
       </div>
+
       <div class="container">
         <div class="hero-content">
-          <div class="hero-text" data-aos="fade-up">
-            <nav aria-label="breadcrumb" class="breadcrumb">
-              <a href="../../index.html" class="breadcrumb-link">Inicio</a>
-              <span class="breadcrumb-separator">/</span>
-              <a href="../index.html" class="breadcrumb-link">Proyectos</a>
-              <span class="breadcrumb-separator">/</span>
-              <span class="breadcrumb-current">AGP</span>
-            </nav>
-            <h1 class="hero-title">
-              <span class="hero-title-main">AG-PYMEs</span>
-              <span class="hero-title-sub">Sistema de Gestión Integral</span>
-            </h1>
-            <p class="hero-description">
-              Aplicación móvil multiplataforma desarrollada con React Native y
-              Expo, diseñada específicamente para la gestión integral de
-              pequeñas y medianas empresas. Proporciona herramientas completas
-              para administrar ventas, inventario, empleados, finanzas y
-              planificación empresarial.
-            </p>
-            <div class="hero-tags">
-              <span class="tech-tag">React Native</span>
-              <span class="tech-tag">Expo</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express</span>
+          <!-- Breadcrumb Navigation -->
+          <nav
+            aria-label="breadcrumb"
+            class="hero-breadcrumb"
+            data-aos="fade-down"
+          >
+            <a href="../../index.html" class="breadcrumb-link">
+              <i class="fas fa-home"></i>
+              Inicio
+            </a>
+            <span class="breadcrumb-separator">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+            <a href="../index.html" class="breadcrumb-link">Proyectos</a>
+            <span class="breadcrumb-separator">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">AGP</span>
+          </nav>
+
+          <!-- Main Hero Layout -->
+          <div class="hero-main">
+            <!-- Left Content Area -->
+            <div class="hero-text-area" data-aos="fade-up" data-aos-delay="100">
+              <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Proyecto Destacado</span>
+              </div>
+
+              <h1 class="hero-title">
+                <span class="hero-title-accent">AG-PYMEs</span>
+                <span class="hero-title-main">Sistema de Gestión</span>
+                <span class="hero-title-sub">para Empresas Modernas</span>
+              </h1>
+
+              <p class="hero-description">
+                Aplicación móvil multiplataforma que revoluciona la gestión
+                empresarial. Desarrollada con React Native y PostgreSQL para
+                ofrecer una experiencia completa en ventas, inventario, finanzas
+                y recursos humanos.
+              </p>
+
+              <!-- Quick Stats
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <div class="stat-content">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Plataformas</span>
+                  </div>
+                </div>
+                <div class="stat-item">                  <div class="stat-icon">
+                    <i class="fas fa-th"></i>
+                  </div>
+                  <div class="stat-content">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Módulos</span>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <div class="stat-content">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Empresas</span>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Tech Stack -->
+              <div class="hero-tech-stack">
+                <span class="tech-stack-label">Tecnologías:</span>
+                <div class="tech-tags">
+                  <span class="tech-tag primary">React Native</span>
+                  <span class="tech-tag">Expo</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Visual Area -->
+            <div
+              class="hero-visual-area"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <div class="hero-card-container">
+                <!-- Main Mockup Card -->
+                <div class="hero-mockup-card">
+                  <div class="mockup-header">
+                    <div class="mockup-dots">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="mockup-title">
+                      Android, IOS & Web &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                  </div>
+                  <div class="mockup-content">
+                    <img
+                      src="./assets/MockupAGP.png"
+                      alt="AG-PYMEs - Interfaz multiplataforma"
+                      class="mockup-image"
+                    />
+                  </div>
+                </div>
+
+                <!-- Floating Elements -->
+                <div class="floating-element logo-element">
+                  <div class="element-content">
+                    <img
+                      src="../../images/AGP/App-logo.svg"
+                      alt="Logo AG-PYMEs"
+                    />
+                  </div>
+                </div>
+
+                <div class="floating-element metrics-element">
+                  <div class="element-content">
+                    <div class="metric-item">
+                      <i class="fas fa-chart-line"></i>
+                      <span>+245% Ventas</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="floating-element notification-element">
+                  <div class="element-content">
+                    <i class="fas fa-bell"></i>
+                    <div class="notification-text">
+                      <span>Nueva venta registrada</span>
+                      <small>Hace 2 minutos</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="hero-logo" data-aos="fade-left" data-aos-delay="200">
-            <div class="logo-container">
-              <img src="../../images/AGP/App-logo.svg" alt="Logo de AG-PYMEs" />
+
+          <!-- Action Area -->
+          <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+            <!-- <a href="#features" class="btn-primary">
+              <i class="fas fa-play"></i>
+              Ver Demo
+            </a>
+            <a href="#tech-stack" class="btn-secondary">
+              <i class="fas fa-code"></i>
+              Tecnologías
+            </a> -->
+            <div class="hero-scroll-indicator">
+              <span>Explorar proyecto</span>
+              <i class="fas fa-chevron-down"></i>
             </div>
           </div>
         </div>
@@ -230,12 +363,17 @@
               </ul>
             </div>
             <div class="feature-image">
-              <div class="image-placeholder">
-                <i class="fas fa-chart-line"></i>
-                <p>
-                  Dashboard con gráficos interactivos mostrando métricas de
-                  ventas, inventario y análisis financiero
-                </p>
+              <div class="feature-video">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  src="./assets/Dashboard.mp4"
+                  type="video/mp4"
+                >
+                  Tu navegador no soporta la reproducción de videos.
+                </video>
               </div>
             </div>
           </div>
@@ -245,12 +383,17 @@
         <div class="feature-showcase reverse" data-aos="fade-up">
           <div class="feature-content">
             <div class="feature-image">
-              <div class="image-placeholder">
-                <i class="fas fa-cash-register"></i>
-                <p>
-                  Interfaz del punto de venta con scanner de códigos, carrito de
-                  compras y métodos de pago
-                </p>
+              <div class="feature-video">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  src="./assets/Sales.mp4"
+                  type="video/mp4"
+                >
+                  Tu navegador no soporta la reproducción de videos.
+                </video>
               </div>
             </div>
             <div class="feature-info">
@@ -314,12 +457,17 @@
               </ul>
             </div>
             <div class="feature-image">
-              <div class="image-placeholder">
-                <i class="fas fa-warehouse"></i>
-                <p>
-                  Panel de inventario mostrando productos, stock, alertas y
-                  gestión de categorías
-                </p>
+              <div class="feature-video">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  src="./assets/Inventory.mp4"
+                  type="video/mp4"
+                >
+                  Tu navegador no soporta la reproducción de videos.
+                </video>
               </div>
             </div>
           </div>
@@ -329,12 +477,17 @@
         <div class="feature-showcase reverse" data-aos="fade-up">
           <div class="feature-content">
             <div class="feature-image">
-              <div class="image-placeholder">
-                <i class="fas fa-users-cog"></i>
-                <p>
-                  Sistema de gestión de empleados con calendario de turnos y
-                  planificación semanal
-                </p>
+              <div class="feature-video">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  src="./assets/Employees.mp4"
+                  type="video/mp4"
+                >
+                  Tu navegador no soporta la reproducción de videos.
+                </video>
               </div>
             </div>
             <div class="feature-info">
@@ -464,7 +617,7 @@
             </h3>
             <div class="tech-items">
               <div class="tech-item">
-                <i class="fas fa-elephant"></i>
+                <i class="fas fa-server"></i>
                 <div class="tech-info">
                   <h4>PostgreSQL</h4>
                   <p>Base de datos principal</p>
@@ -478,7 +631,7 @@
                 </div>
               </div>
               <div class="tech-item">
-                <i class="fas fa-backup"></i>
+                <i class="fas fa-shield-alt"></i>
                 <div class="tech-info">
                   <h4>Backup Automático</h4>
                   <p>Scripts de respaldo</p>
